@@ -9,7 +9,7 @@ class Labyrinth(arcade.Window):
         self.setup()
 
      def setup(self):
-        self.zeit = 30
+        self.zeit = 30#
 
         
 
