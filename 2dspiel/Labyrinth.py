@@ -167,6 +167,23 @@ class Labyrinth(arcade.Window):
                self.Schalter.center_x = 744
                self.Schalter.center_y = 72
                self.gegenstand_liste.append(self.Schalter)
+
+          
+
+
+              
+              
+
+          if self.dia   not in self.gegenstand_liste and self.cion not in self.gegenstand_liste and self.cion2 not in self.gegenstand_liste:
+              arcade.draw_text(10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
+              i = 1
+              while len(self.gegenstand_liste):
+                  arcade.check_for_collision(self.SCHAF, self.gegenstand_liste)
+                  i = i+1
+              
+              
+              
+          
                
 
 
@@ -208,9 +225,8 @@ class Labyrinth(arcade.Window):
           if arcade.check_for_collision(self.oz2, self.SCHAF):
               self.zeit = 0.0000000000000000000000000001
               
-              
           
-        
+
 
 
           if self.SCHAF.center_x < 24:
@@ -218,6 +234,7 @@ class Labyrinth(arcade.Window):
      
           
           arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
+         
 
 
 Labyrinth()

@@ -258,6 +258,8 @@ class Labyrinth(arcade.Window):
           
           arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
 
+print("you are gay")
+
 
 Labyrinth()
 
