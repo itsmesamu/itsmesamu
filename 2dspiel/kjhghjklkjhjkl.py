@@ -1,5 +1,4 @@
-eins = input("erste Zahl:  ")
+eins = input("erste Zahl:  ")                                   
 zwei = input("zweite Zahl: ")
-summe = int(eins) / int(zwei)
+summe = int(eins) + int(zwei)
 print(summe)
-round (summe)

@@ -175,14 +175,14 @@ class Labyrinth(arcade.Window):
               
 
           if self.dia   not in self.gegenstand_liste and self.cion not in self.gegenstand_liste and self.cion2 not in self.gegenstand_liste:
-              arcade.draw_text(10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
-              i = 1
+             
+              i = 0
               while len(self.gegenstand_liste):
                   arcade.check_for_collision(self.SCHAF, self.gegenstand_liste)
                   i = i+1
               
               
-              
+          arcade.draw_text(10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
           
                
 
