@@ -1,5 +1,11 @@
 import arcade
 
+class Gegner(arcade.Sprite):
+     def on_update(self, delta_time):
+         self.center_x += self.change_x * delta_time
+         self.center_y += self.change_y * delta_time
+
+
 class Labyrinth(arcade.Window):
      def __init__(self):
         super().__init__(816, 660, "Labyrinth")
@@ -9,11 +15,13 @@ class Labyrinth(arcade.Window):
         self.setup()
 
      def setup(self):
-        self.zeit = 30#
+        self.zeit = 40
+
+     
 
         
 
-        self.gegenstand_liste = arcade.SpriteList()
+        self.gegenstand_liste = arcade.SpriteList(use_spatial_hash=True)
         self.fake_liste = arcade.SpriteList()
         self.gegner_liste = arcade.SpriteList()
 
@@ -59,27 +67,27 @@ class Labyrinth(arcade.Window):
 
 
 
-        self.oz = arcade.Sprite("OZ.png")
+        self.oz = Gegner("OZ.png")
         self.oz.center_x = 120-24
         self.oz.center_y = 578-24
         self.gegner_liste.append(self.oz)
 
-        self.oz2 = arcade.Sprite("oz.png")
+        self.oz2 = Gegner("oz.png")
         self.oz2.center_x =140-24
         self.oz2.center_y = 120-24
         self.gegner_liste.append(self.oz2)
 
-        self.oz3 = arcade.Sprite("oz.png")
+        self.oz3 = Gegner("oz.png")
         self.oz3.center_x =134-24
         self.oz3.center_y = 426-24
         self.gegner_liste.append(self.oz3)
 
-        self.oz4 = arcade.Sprite("oz.png")
+        self.oz4 = Gegner("oz.png")
         self.oz4.center_x = 538
         self.oz4.center_y = 237
         self.gegner_liste.append(self.oz4)
 
-        self.oz5 = arcade.Sprite("oz.png")
+        self.oz5 = Gegner("oz.png")
         self.oz5.center_x = 638
         self.oz5.center_y = 327
         self.gegner_liste.append(self.oz5)
@@ -98,11 +106,11 @@ class Labyrinth(arcade.Window):
         self.spielerliste = arcade.SpriteList()
 
 
-        self.oz.change_x = 10
-        self.oz2.change_y= 10
-        self.oz3.change_x= 10
-        self.oz4.change_x=10
-        self.oz5.change_x=10
+        self.oz.change_x = 830
+        self.oz2.change_y= 830
+        self.oz3.change_x= 830
+        self.oz4.change_x=830
+        self.oz5.change_x=830
      
        
        
@@ -146,7 +154,10 @@ class Labyrinth(arcade.Window):
              self.physik_engine.update()
              self.spielerliste.update()
              self.zeit = self.zeit - delta_time
-             self.gegner_liste.update()
+          
+          self.gegner_liste.on_update(delta_time)
+
+
           
 
           if self.dia   not in self.gegenstand_liste and self.cion not in self.gegenstand_liste and self.cion2 not in self.gegenstand_liste and  arcade.check_for_collision(self.SCHAF, self.Schalter):
@@ -166,43 +177,38 @@ class Labyrinth(arcade.Window):
                
 
 
+
+       
           if self.oz.center_x > 768 - 24:
-           self.oz.change_x = -10
+              self.oz.change_x = -730
 
           if self.oz.center_x < 96 -24:
-            self.oz.change_x = 10
+            self.oz.change_x = 730
 
           if self.oz2.center_y > 630- 24:
-            self.oz2.change_y = -10   
+            self.oz2.change_y = -730  
 
           if self.oz2.center_y < 96 -24:
-              self.oz2.change_y = 10
+              self.oz2.change_y = 730
 
                 
           if self.oz3.center_x > 800 - 24:
-              self.oz3.change_x = -10
+              self.oz3.change_x = -730
 
           if self.oz3.center_x < 94 - 24:
-              self.oz3.change_x = 10
+              self.oz3.change_x = 730
 
           if self.oz4.center_x > 816-24:
-               self.oz4.change_x=-10
+               self.oz4.change_x=-730
 
           if self.oz4.center_x < 104-24:
-              self.oz4.change_x = 10
+              self.oz4.change_x = 730
 
           if self.oz5.center_x > 816-24:
-               self.oz5.change_x=-10
+               self.oz5.change_x=-730
 
           if self.oz5.center_x < 104-24:
-              self.oz5.change_x = 10
-
-
-
-
-          
-
-         
+              self.oz5.change_x = 730
                   
 
     
