@@ -1,7 +1,7 @@
 import arcade, random
 
-BREITE = 2200
-HÖHE = 1100
+BREITE = 800
+HÖHE = 600
 
 class Spiel(arcade.Window):
     def __init__ (self, breite, höhe, titel):
@@ -25,20 +25,20 @@ class Spiel(arcade.Window):
         self.gegenstand_liste.append(BLUME)
 
         Python = arcade.Sprite("Python.png")
-        Python.center_x = random.randrange(BREITE)
-        Python.center_y = random.randrange(HÖHE)
+        Python.center_x = random.randrange(600)
+        Python.center_y = random.randrange(800)
         self.gegenstand_liste.append(Python)
         self.hindernis_liste = arcade.SpriteList()
 
         glas = arcade.Sprite("Sprite-0003.png")
-        glas.center_x = random.randrange(BREITE)
-        glas.center_y = random.randrange(HÖHE)
+        glas.center_x = random.randrange(600)
+        glas.center_y = random.randrange(800)
         self.gegenstand_liste.append(glas)
         self.hindernis_liste = arcade.SpriteList()
 
 
         i=1
-        while i<=1000:
+        while i<=1:
             apfelbaum = arcade.Sprite("apfelbaum.png")
             apfelbaum.center_x = random.randrange(BREITE)
             apfelbaum.center_y = random.randrange(HÖHE)
@@ -46,7 +46,7 @@ class Spiel(arcade.Window):
             i = i + 1
 
         i=1
-        while i<=1000:
+        while i<=1:
             busch = arcade.Sprite("BUsch .png")
             busch.center_x = random.randrange(BREITE)
             busch.center_y = random.randrange(HÖHE)
@@ -54,7 +54,7 @@ class Spiel(arcade.Window):
             i = i + 1 
 
         i=1
-        while i<=1000:
+        while i<=1:
             baum = arcade.Sprite("bimibaumi.png")
             baum.center_x = random.randrange(BREITE)
             baum.center_y = random.randrange(HÖHE)
@@ -121,5 +121,5 @@ class Spiel(arcade.Window):
             self.setup()
 
 
-spiel = Spiel(2200,1100, "Osterspiel")
+spiel = Spiel(600,800, "Osterspiel")
 arcade.run()  

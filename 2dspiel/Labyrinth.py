@@ -10,12 +10,14 @@ class Labyrinth(arcade.Window):
 
      def setup(self):
         self.zeit = 35
+        self.zahl = 0
 
         
 
         self.gegenstand_liste = arcade.SpriteList()
         self.fake_liste = arcade.SpriteList()
         self.gegner_liste = arcade.SpriteList()
+        self.gegenstand_liste2 = arcade.SpriteList()
 
 
     
@@ -151,6 +153,11 @@ class Labyrinth(arcade.Window):
              self.spielerliste.update()
              self.zeit = self.zeit - delta_time
              self.gegner_liste.update()
+             if arcade.check_for_collision_with_list(self.SCHAF,self.gegenstand_liste):
+                 self.zahl = self.zahl +1
+             self.gegenstand_liste2.update()
+
+             
           
 
           if self.dia   not in self.gegenstand_liste and self.cion not in self.gegenstand_liste and self.cion2 not in self.gegenstand_liste and  arcade.check_for_collision(self.SCHAF, self.Schalter):
@@ -158,34 +165,28 @@ class Labyrinth(arcade.Window):
                self.Tür.kill()
 
           gegenstand_hitliste = arcade.check_for_collision_with_list(self.SCHAF, self.gegenstand_liste)
+          gegenstand_hitliste2 = arcade.check_for_collision_with_list(self.SCHAF, self.gegenstand_liste2)
 
           for gegenstand in gegenstand_hitliste:
+               gegenstand.kill()
+
+          for gegenstand in gegenstand_hitliste2:
                gegenstand.kill()
 
           if len(self.gegenstand_liste) == 0:
                self.Schalter = arcade.Sprite("Schalter.png")
                self.Schalter.center_x = 744
                self.Schalter.center_y = 72
-               self.gegenstand_liste.append(self.Schalter)
-
-          
+               self.gegenstand_liste2.append(self.Schalter)
 
 
-              
-              
 
-          if self.dia   not in self.gegenstand_liste and self.cion not in self.gegenstand_liste and self.cion2 not in self.gegenstand_liste:
-             
-              i = 0
-              while len(self.gegenstand_liste):
-                  arcade.check_for_collision(self.SCHAF, self.gegenstand_liste)
-                  i = i+1
-              
-              
-          arcade.draw_text(10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
-          
+
                
 
+              
+             
+ 
 
           if self.oz.center_x > 768 - 24:
            self.oz.change_x = -7
@@ -212,6 +213,7 @@ class Labyrinth(arcade.Window):
           self.gegenstand_liste.draw()
           self.fake_liste.draw()
           self.gegner_liste.draw()
+          self.gegenstand_liste2.draw()
 
           if self.zeit < 0:
               arcade.draw_lrtb_rectangle_filled(0, 816, 660, 0, arcade.color.BLACK_LEATHER_JACKET)
@@ -233,9 +235,8 @@ class Labyrinth(arcade.Window):
                arcade.draw_text("level up", 408, 314, font_size=60,font_name= "Kenney Blocks", anchor_x="center", anchor_y="center")
      
           
-          arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
-         
-
+          arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET,30)
+          arcade.draw_text(self.zahl,100,624,arcade.color.BARN_RED,30)
 
 Labyrinth()
 
