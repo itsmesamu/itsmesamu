@@ -15,7 +15,8 @@ class Labyrinth(arcade.Window):
         self.setup()
 
      def setup(self):
-        self.zeit = 40
+        self.zeit = 35
+        self.zahl = 0
 
      
 
@@ -24,6 +25,7 @@ class Labyrinth(arcade.Window):
         self.gegenstand_liste = arcade.SpriteList(use_spatial_hash=True)
         self.fake_liste = arcade.SpriteList()
         self.gegner_liste = arcade.SpriteList()
+        self.gegenstand_liste2 = arcade.SpriteList()
 
 
     
@@ -154,6 +156,10 @@ class Labyrinth(arcade.Window):
              self.physik_engine.update()
              self.spielerliste.update()
              self.zeit = self.zeit - delta_time
+             if arcade.check_for_collision_with_list(self.SCHAF,self.gegenstand_liste):
+                 self.zahl = self.zahl +1
+             self.gegenstand_liste2.update()
+
           
           self.gegner_liste.on_update(delta_time)
 
@@ -165,9 +171,12 @@ class Labyrinth(arcade.Window):
                self.Tür.kill()
 
           gegenstand_hitliste = arcade.check_for_collision_with_list(self.SCHAF, self.gegenstand_liste)
+          gegenstand_hitliste2 = arcade.check_for_collision_with_list(self.SCHAF, self.gegenstand_liste2)
 
           for gegenstand in gegenstand_hitliste:
                gegenstand.kill()
+          for gegenstand in gegenstand_hitliste2:
+              gegenstand.kill()
 
           if len(self.gegenstand_liste) == 0:
                self.Schalter = arcade.Sprite("Schalter.png")
@@ -221,6 +230,7 @@ class Labyrinth(arcade.Window):
           self.gegenstand_liste.draw()
           self.fake_liste.draw()
           self.gegner_liste.draw()
+          self.gegenstand_liste2.draw()
 
           if self.zeit < 0:
               arcade.draw_lrtb_rectangle_filled(0, 816, 660, 0, arcade.color.BLACK_LEATHER_JACKET)
@@ -249,12 +259,14 @@ class Labyrinth(arcade.Window):
           
         
 
-
           if self.SCHAF.center_x < 24:
                arcade.draw_text("!!!!!!!!WINNER!!!!!!!!!!", 408, 314, font_size=60,font_name= "Kenney Blocks", anchor_x="center", anchor_y="center")
      
           
           arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET, 30)
+          if self.zeit > 0:
+               arcade.draw_text(self.zahl,300,624,arcade.color.BARN_RED,30)
+
 
 
 Labyrinth()

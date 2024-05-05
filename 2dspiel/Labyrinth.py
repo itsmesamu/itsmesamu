@@ -236,7 +236,8 @@ class Labyrinth(arcade.Window):
      
           
           arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET,30)
-          arcade.draw_text(self.zahl,300,624,arcade.color.BARN_RED,30)
+          if self.zeit > 0:
+               arcade.draw_text(self.zahl,300,624,arcade.color.BARN_RED,30)
 
 Labyrinth()
 
