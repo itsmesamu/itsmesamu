@@ -179,6 +179,8 @@ class Labyrinth(arcade.Window):
                self.Schalter.center_y = 72
                self.gegenstand_liste2.append(self.Schalter)
 
+          
+
 
 
 
