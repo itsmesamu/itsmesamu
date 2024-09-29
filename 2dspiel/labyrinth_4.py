@@ -11,9 +11,11 @@ class Labyrinth(arcade.Window):
         self.setup()
 
      def setup(self):
-        self.zeit = 29346289764782634
+        self.zeit = 200
         self.zahl = 0
         self.patronen = 100
+        self.zähler = 0
+
 
         
 
@@ -103,28 +105,28 @@ class Labyrinth(arcade.Window):
                  self.patrone.center_x = self.SCHAF.center_x
                  self.patrone.center_y = self.SCHAF.center_y
                  self.Schussliste.append(self.patrone)
-                 self.patrone.change_x = 6
+                 self.patrone.change_x = 10
                  self.patronen = self.patronen - 1
             if symbol == arcade.key.LEFT:
                  self.patrone2 = arcade.Sprite("patrone2.png")
                  self.patrone2.center_x = self.SCHAF.center_x
                  self.patrone2.center_y = self.SCHAF.center_y
                  self.Schussliste.append(self.patrone2)
-                 self.patrone2.change_x = -6
+                 self.patrone2.change_x = -10
                  self.patronen = self.patronen - 1
             if symbol == arcade.key.UP:
                  self.patrone3 = arcade.Sprite("patrone3.png")
                  self.patrone3.center_x = self.SCHAF.center_x
                  self.patrone3.center_y = self.SCHAF.center_y
                  self.Schussliste.append(self.patrone3)
-                 self.patrone3.change_y = 6
+                 self.patrone3.change_y = 10
                  self.patronen = self.patronen - 1
             if symbol == arcade.key.DOWN:
                  self.patrone4 = arcade.Sprite("patrone4.png")
                  self.patrone4.center_x = self.SCHAF.center_x
                  self.patrone4.center_y = self.SCHAF.center_y
                  self.Schussliste.append(self.patrone4)
-                 self.patrone4.change_y = -6
+                 self.patrone4.change_y = -10
                  self.patronen = self.patronen - 1
             
 
@@ -151,28 +153,53 @@ class Labyrinth(arcade.Window):
                  self.gegenstand_liste2.update()
                self.Schussliste.update()
                
+               
                if arcade.check_for_collision(self.patrone,self.scheibe1):
-                 self.scheibe1.kill()
-                 self.patrone.kill()
-                 self.scheibe1 = arcade.Sprite
-                 self.scheibe1.center_x = random
-                 self.scheibe1.center_y = random
+               
                  
-                 self.treffliste.append(self.scheibe1)
+
+
+                 self.scheibe1.center_x = random.randrange(50,760)
+                 self.scheibe1.center_y = random.randrange(50,590)
+
                if arcade.check_for_collision(self.patrone2,self.scheibe1):
-                 self.scheibe1.kill()
-                 self.patrone2.kill()
+                 
+                 
 
-                 self.treffliste.append(self.scheibe1)                 
+
+                 self.scheibe1.center_x = random.randrange(50,760)
+                 self.scheibe1.center_y = random.randrange(50,590)
+
+                                
                if arcade.check_for_collision(self.patrone3,self.scheibe1):
-                 self.scheibe1.kill()
-                 self.patrone3.kill()
+                 
+                
 
-                 self.treffliste.append(self.scheibe1)                 
+                 self.scheibe1.center_x = random.randrange(50,760)
+                 self.scheibe1.center_y = random.randrange(50,590)
+
+                          
                if arcade.check_for_collision(self.patrone4,self.scheibe1):
-                 self.scheibe1.kill()
-                 self.patrone4.kill()
-                 self.treffliste.append(self.scheibe1)
+                 
+                 
+
+                 self.scheibe1.center_x = random.randrange(50,760)
+                 self.scheibe1.center_y = random.randrange(50,590)
+
+               if arcade.check_for_collision(self.patrone,self.scheibe1):
+                   self.zähler = self.zähler +1
+               
+               if arcade.check_for_collision(self.patrone,self.scheibe1):
+                   self.zähler=self.zähler +1
+                   
+
+               if arcade.check_for_collision(self.patrone,self.scheibe1):
+                   self.zähler=self.zähler+1
+                   
+
+               if arcade.check_for_collision(self.patrone,self.scheibe1):
+                   self.zähler=self.zähler+1
+                
               
 
           for patrone in self.Schussliste:
@@ -200,6 +227,9 @@ class Labyrinth(arcade.Window):
 
           if self.zeit < 0:
                arcade.draw_text("Loser",50,100,arcade.color.BARN_RED,200)
+
+          if self.zähler < 0:
+              arcade.draw_text(round(self.zähler,1),100,100,arcade.color.BLACK_LEATHER_JACKET,30)
           
           
           
