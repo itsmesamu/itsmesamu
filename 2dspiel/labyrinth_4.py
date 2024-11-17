@@ -177,7 +177,6 @@ class Labyrinth(arcade.Window):
 
                  self.scheibe1.center_x = random.randrange(50,760)
                  self.scheibe1.center_y = random.randrange(50,590)
-
                           
                if arcade.check_for_collision(self.patrone4,self.scheibe1):
                  
