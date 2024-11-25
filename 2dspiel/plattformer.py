@@ -10,14 +10,38 @@ class Plattformer(arcade.Window):
 
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
-        self.tile_map= arcade.load_tilemap("untitled.tmx")
+        self.tile_map= arcade.load_tilemap("map.tmx")
 
         self.szene = arcade.Scene.from_tilemap(self.tile_map)
+
+        self.spielfigur = arcade.Sprite("knight.png")
+        self.spielfigur.center_x = 160
+        self.spielfigur.center_y = 512
+        self.szene.add_sprite("Spielfigur",self.spielfigur)
+
+        self.szene.get_sprite_list("Tile Layer 1")
+
+    def on_key_press(self,symbol,modifiers):
+        if symbol == arcade.key.RIGHT:
+            self.spielfigur.change_x = 6
+        if symbol == arcade.key.LEFT:
+            self.spielfigur.change_x = -2
+
+    def on_key_release(self,symbol,modifiers):
+        if symbol==arcade.key.RIGHT:
+            self.spielfigur.change_x = 0
+        if symbol == arcade.key.LEFT:
+            self.spielfigur.change_x = 0
+        
+
 
     def on_draw(self):
         self.clear()
 
         self.szene.draw()
+    def on_update(self, deltatime):
+        self.spielfigur.update()
+        
 
 Plattformer()
 arcade.run()
