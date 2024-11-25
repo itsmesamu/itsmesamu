@@ -6,7 +6,7 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(2000,1000,"Plattformer")
+        super().__init__(1000,500,"Plattformer")
 
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
