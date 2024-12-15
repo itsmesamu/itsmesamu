@@ -16,24 +16,28 @@ class Plattformer(arcade.Window):
 
         self.spielfigur = arcade.Sprite("knight.png")
         self.spielfigur.center_x = 160
-        self.spielfigur.center_y = 512
+        self.spielfigur.center_y = 510
         self.szene.add_sprite("Spielfigur",self.spielfigur)
 
         self.szene.get_sprite_list("Tile Layer 1")
 
+        self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
+
     def on_key_press(self,symbol,modifiers):
         if symbol == arcade.key.RIGHT:
-            self.spielfigur.change_x = 6
+            self.spielfigur.change_x = 2
         if symbol == arcade.key.LEFT:
             self.spielfigur.change_x = -2
+        if symbol == arcade.key.SPACE:
+            self.spielfigur.change_y = 4
 
     def on_key_release(self,symbol,modifiers):
         if symbol==arcade.key.RIGHT:
             self.spielfigur.change_x = 0
         if symbol == arcade.key.LEFT:
             self.spielfigur.change_x = 0
-        
-
+        if symbol == arcade.key.SPACE:
+            self.spielfigur.change_y=-4 
 
     def on_draw(self):
         self.clear()
@@ -41,7 +45,7 @@ class Plattformer(arcade.Window):
         self.szene.draw()
     def on_update(self, deltatime):
         self.spielfigur.update()
-        
+        self.physik_engine.update()
 
 Plattformer()
 arcade.run()
