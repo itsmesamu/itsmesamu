@@ -9,8 +9,12 @@ import arcade
 class Plattformer(arcade.Window):
     def __init__(self):
         super().__init__(2000,1000,"Plattformer")
-
+        
+        self.setup()
+    def setup(self):
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
+
+
 
         self.tile_map= arcade.load_tilemap("map.tmx")
 
@@ -21,17 +25,18 @@ class Plattformer(arcade.Window):
         self.spielfigur.center_y = 510
         self.szene.add_sprite("Spielfigur",self.spielfigur)
 
+    
+
         self.szene.get_sprite_list("Tile Layer 1")
 
         self.szene.get_sprite_list("leiter layer")
+
+        self.szene.get_sprite_list("power ups")
         
         self.kamera = arcade.Camera(self.width, self.height)
 
-        
-
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
 
-    
     def on_key_press(self,symbol,modifiers):
         if symbol == arcade.key.RIGHT:
             self.spielfigur.change_x = 2
@@ -40,11 +45,11 @@ class Plattformer(arcade.Window):
         if symbol == arcade.key.SPACE:
             self.spielfigur.change_y = 4
         if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
-            if symbol == arcade.key.UP:
-                self.spielfigur.change_y = 
-            if symbol == arcade.key.DOWN:
-                self.spielfigur.change_y = -
-        
+            if arcade.key.UP:
+                self.spielfigur.change_y = 5
+        if symbol == arcade.key.R:
+            self.setup()
+            
 
 
     def on_key_release(self,symbol,modifiers):
@@ -65,7 +70,6 @@ class Plattformer(arcade.Window):
             screen_center_x = 0
         if screen_center_y < 0:
             screen_center_y = 0
-        
 
         spielfigur_centered = screen_center_x, screen_center_y
         self.kamera.move_to(spielfigur_centered)
@@ -73,20 +77,21 @@ class Plattformer(arcade.Window):
     def on_draw(self):
         self.clear()
         self.kamera.use()
-
+        self.szene.draw()
         if self.spielfigur.center_y < 0:
             arcade.draw_text("LOOSER",self.spielfigur.center_x, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=300,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
-        self.szene.draw()
+        
+
+        
     def on_update(self, deltatime):
         self.spielfigur.update()
         self.physik_engine.update()
         self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
         self.kamera.update()
-        self.center_camera_to_player()        
-
+        self.center_camera_to_player()
         
-
+            
 
 Plattformer()
 arcade.run()
