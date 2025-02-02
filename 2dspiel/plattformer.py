@@ -25,6 +25,8 @@ class Plattformer(arcade.Window):
         self.spielfigur.center_y = 510
         self.szene.add_sprite("Spielfigur",self.spielfigur)
 
+        
+
     
 
         self.szene.get_sprite_list("Tile Layer 1")
@@ -49,6 +51,8 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_y = 5
         if symbol == arcade.key.R:
             self.setup()
+        if symbol == arcade.key.DOWN:
+            self.spielfigur.change_x = 10
             
 
 
@@ -57,10 +61,11 @@ class Plattformer(arcade.Window):
             self.spielfigur.change_x = 0
         if symbol == arcade.key.LEFT:
             self.spielfigur.change_x = 0
-        if symbol == arcade.key.SPACE:
-            self.spielfigur.change_y=-5
 
+        if symbol == arcade.key.DOWN:
+            self.spielfigur.change_x = 0
 
+    
     def center_camera_to_player(self):
         screen_center_x = self.spielfigur.center_x - (self.kamera.viewport_width / 2)
         screen_center_y= self.spielfigur.center_y - (
@@ -68,8 +73,7 @@ class Plattformer(arcade.Window):
         )
         if screen_center_x < 0:
             screen_center_x = 0
-        if screen_center_y < 0:
-            screen_center_y = 0
+
 
         spielfigur_centered = screen_center_x, screen_center_y
         self.kamera.move_to(spielfigur_centered)
@@ -79,9 +83,11 @@ class Plattformer(arcade.Window):
         self.kamera.use()
         self.szene.draw()
         if self.spielfigur.center_y < 0:
-            arcade.draw_text("LOOSER",self.spielfigur.center_x, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=300,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+            arcade.draw_text("LOOSER",self.spielfigur.center_x, self.spielfigur.center_y, arcade.color.BLACK_LEATHER_JACKET, font_size=300,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
-        
+
+
+
 
         
     def on_update(self, deltatime):
@@ -90,6 +96,8 @@ class Plattformer(arcade.Window):
         self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
         self.kamera.update()
         self.center_camera_to_player()
+        self.hitliste=arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("power ups"))
+            
         
             
 
