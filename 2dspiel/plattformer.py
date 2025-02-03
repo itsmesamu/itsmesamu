@@ -89,7 +89,11 @@ class Plattformer(arcade.Window):
         self.physik_engine.update()
         self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
         self.kamera.update()
+<<<<<<< HEAD
         self.center_camera_to_player() 
+=======
+        self.center_camera_to_player()
+>>>>>>> parent of fd6b8f9 (123)
         
             
 
