@@ -20,7 +20,7 @@ class Plattformer(arcade.Window):
 
         self.szene = arcade.Scene.from_tilemap(self.tile_map)
 
-        self.spielfigur = arcade.Sprite("knight.png")
+        self.spielfigur = arcade.Sprite("knighte.png")
         self.spielfigur.center_x = 160
         self.spielfigur.center_y = 510
         self.szene.add_sprite("Spielfigur",self.spielfigur)
@@ -89,7 +89,7 @@ class Plattformer(arcade.Window):
         self.physik_engine.update()
         self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
         self.kamera.update()
-        self.center_camera_to_player()
+        self.center_camera_to_player() 
         
             
 
