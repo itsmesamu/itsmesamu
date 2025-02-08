@@ -84,8 +84,8 @@ class Plattformer(arcade.Window):
             screen_center_x = 0
         if screen_center_y < 0:
             screen_center_y = 00
-        if screen_center_x > 1000:
-            screen_center_x = 1000
+        if screen_center_x > 5250:
+            screen_center_x = 5250
 
         spielfigur_centered = screen_center_x, screen_center_y
         self.kamera.move_to(spielfigur_centered)
@@ -123,9 +123,8 @@ class Plattformer(arcade.Window):
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
-                self.spielfigur.change_x = 1
-                if arcade.key.RIGHT:
-                    self.spielfigur.change_x = 3
+                self.spielfigur.change_x = 3
+
                     
 Plattformer()
 arcade.run()
