@@ -25,20 +25,20 @@ class Spiel(arcade.Window):
         self.gegenstand_liste.append(BLUME)
 
         Python = arcade.Sprite("Python.png")
-        Python.center_x = random.randrange(600)
-        Python.center_y = random.randrange(800)
+        Python.center_x = random.randrange(800)
+        Python.center_y = random.randrange(600)
         self.gegenstand_liste.append(Python)
         self.hindernis_liste = arcade.SpriteList()
 
         glas = arcade.Sprite("Sprite-0003.png")
-        glas.center_x = random.randrange(600)
-        glas.center_y = random.randrange(800)
+        glas.center_x = random.randrange(800)
+        glas.center_y = random.randrange(600)
         self.gegenstand_liste.append(glas)
         self.hindernis_liste = arcade.SpriteList()
 
 
         i=1
-        while i<=1:
+        while i<=250:
             apfelbaum = arcade.Sprite("apfelbaum.png")
             apfelbaum.center_x = random.randrange(BREITE)
             apfelbaum.center_y = random.randrange(HÖHE)
@@ -46,7 +46,7 @@ class Spiel(arcade.Window):
             i = i + 1
 
         i=1
-        while i<=1:
+        while i<=250:
             busch = arcade.Sprite("BUsch .png")
             busch.center_x = random.randrange(BREITE)
             busch.center_y = random.randrange(HÖHE)
@@ -54,7 +54,7 @@ class Spiel(arcade.Window):
             i = i + 1 
 
         i=1
-        while i<=1:
+        while i<=250:
             baum = arcade.Sprite("bimibaumi.png")
             baum.center_x = random.randrange(BREITE)
             baum.center_y = random.randrange(HÖHE)
@@ -69,7 +69,7 @@ class Spiel(arcade.Window):
         pseudosprite = arcade.Sprite()
         pseudosprite.center_x = x
         pseudosprite.center_y = y
-        pseudosprite.set_hit_box([(-10000000000000, -100000000000000), (100000000000000,-10000000000000),(-1000000000000, 10000000000000), (10000000000000, 10000000000000)])
+        pseudosprite.set_hit_box([(-1, -1), (1,-1),(-1, 1), (1, 1)])
 
         gegenstand_hitliste = arcade.check_for_collision_with_list(pseudosprite, self.gegenstand_liste)
         
@@ -94,9 +94,9 @@ class Spiel(arcade.Window):
 
         arcade.draw_text(round(self.zeit,1), 600,30, arcade.color.BLACK_LEATHER_JACKET, 30)
 
-        if self.anzahl == 3:
-            arcade.draw_lrtb_rectangle_filled(0, 2200, 1100, 0, arcade.color.BLACK_LEATHER_JACKET)
-            arcade.draw_text("!!!!!VICTORY!!!!!", 1100, 550, arcade.color.WHITE, font_size=60, font_name="Kenney Blocks", anchor_x="center", anchor_y="center")
+        if self.anzahl == 500:
+            arcade.draw_lrtb_rectangle_filled(0, 800, 600, 0, arcade.color.BLACK_LEATHER_JACKET)
+            arcade.draw_text("!!!!!VICTORY!!!!!", 400, 300, arcade.color.WHITE, font_size=30, font_name="Kenney Blocks", anchor_x="center", anchor_y="center")
 
             if self.ton_abgespielt == False:
                 self.ton = arcade.load_sound("rizz.wav")
@@ -121,5 +121,5 @@ class Spiel(arcade.Window):
             self.setup()
 
 
-spiel = Spiel(600,800, "Osterspiel")
+spiel = Spiel(800,600, "Osterspiel")
 arcade.run()  

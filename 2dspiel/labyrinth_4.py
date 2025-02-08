@@ -185,18 +185,18 @@ class Labyrinth(arcade.Window):
                  self.scheibe1.center_x = random.randrange(50,760)
                  self.scheibe1.center_y = random.randrange(50,590)
 
-               if arcade.check_for_collision(self.patrone,self.scheibe1):
+               if arcade.check_for_collision_with_list(self.patrone,self.treffliste):
                    self.zähler = self.zähler +1
                
-               if arcade.check_for_collision(self.patrone,self.scheibe1):
+               if arcade.check_for_collision_with_list(self.patrone2,self.treffliste):
                    self.zähler=self.zähler +1
                    
 
-               if arcade.check_for_collision(self.patrone,self.scheibe1):
+               if arcade.check_for_collision_with_list(self.patrone3,self.treffliste):
                    self.zähler=self.zähler+1
                    
 
-               if arcade.check_for_collision(self.patrone,self.scheibe1):
+               if arcade.check_for_collision_with_list(self.patrone4,self.treffliste):
                    self.zähler=self.zähler+1
                 
               

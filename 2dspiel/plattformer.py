@@ -8,10 +8,12 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(2000,1000,"Plattformer")
+        super().__init__(1000,700,"Plattformer")
         
         self.setup()
     def setup(self):
+        self.zeit = 100
+        self.zahl = 0
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
 
@@ -32,11 +34,15 @@ class Plattformer(arcade.Window):
         self.szene.get_sprite_list("leiter layer")
 
         self.szene.get_sprite_list("power ups")
+
+        self.szene.get_sprite_list("lava layer")
+
+        self.szene.get_sprite_list("eis layer")
         
         self.kamera = arcade.Camera(self.width, self.height)
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
-
+    
     def on_key_press(self,symbol,modifiers):
         if symbol == arcade.key.RIGHT:
             self.spielfigur.change_x = 2
@@ -49,9 +55,12 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_y = 5
         if symbol == arcade.key.R:
             self.setup()
+        if symbol == arcade.key.DOWN:
+            self.spielfigur.change_x = 10
+
             
 
-
+        
     def on_key_release(self,symbol,modifiers):
         if symbol==arcade.key.RIGHT:
             self.spielfigur.change_x = 0
@@ -59,6 +68,10 @@ class Plattformer(arcade.Window):
             self.spielfigur.change_x = 0
         if symbol == arcade.key.SPACE:
             self.spielfigur.change_y=-5
+        if symbol == arcade.key.DOWN:
+            self.spielfigur.change_x = 0
+
+            
 
 
     def center_camera_to_player(self):
@@ -79,23 +92,33 @@ class Plattformer(arcade.Window):
         self.kamera.use()
         self.szene.draw()
         if self.spielfigur.center_y < 0:
-            arcade.draw_text("LOOSER",self.spielfigur.center_x, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=300,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+            arcade.draw_text("LOOSER",self.spielfigur.center_x, 300, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
+        arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, 750, arcade.color.BLACK_LEATHER_JACKET, 30)
         
-
+        if self.zeit < 0:
+            arcade.draw_text("LOOSER",self.spielfigur.center_x, 400, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+        
+        if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
+                arcade.draw_text("LOOSER",self.spielfigur.center_x, 400, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+        
+        arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
         
     def on_update(self, deltatime):
-        self.spielfigur.update()
-        self.physik_engine.update()
-        self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
-        self.kamera.update()
-<<<<<<< HEAD
-        self.center_camera_to_player() 
-=======
-        self.center_camera_to_player()
->>>>>>> parent of fd6b8f9 (123)
-        
-            
-
+        if self.zeit > 0:
+            self.spielfigur.update()
+            self.physik_engine.update()
+            self.kamera.move_to((self.spielfigur.center_x, self.spielfigur.center_y))
+            self.kamera.update()
+            self.center_camera_to_player() 
+            self.center_camera_to_player()
+            self.zeit = self.zeit - deltatime
+            self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
+            for arcade.sprite in self.hitliste:
+                arcade.sprite.kill()
+                self.zahl = self.zahl + 1
+            if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
+                self.spielfigur.kill()
+                    
 Plattformer()
 arcade.run()

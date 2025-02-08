@@ -179,17 +179,6 @@ class Labyrinth(arcade.Window):
                self.Schalter.center_y = 72
                self.gegenstand_liste2.append(self.Schalter)
 
-          
-
-
-
-
-               
-
-              
-             
- 
-
           if self.oz.center_x > 768 - 24:
            self.oz.change_x = -7
 
@@ -201,11 +190,6 @@ class Labyrinth(arcade.Window):
 
           if self.oz2.center_y < 96 -24:
               self.oz2.change_y = 3
-
-         
-                  
-
-    
 
      def on_draw(self):
           self.clear()
@@ -224,19 +208,12 @@ class Labyrinth(arcade.Window):
           if arcade.check_for_collision(self.oz, self.SCHAF):
               self.zeit=0.000000000000000000000000001
               
-             
-
           if arcade.check_for_collision(self.oz2, self.SCHAF):
               self.zeit = 0.0000000000000000000000000001
               
-          
-
-
-
           if self.SCHAF.center_x < 24:
                arcade.draw_text("level up", 408, 314, font_size=60,font_name= "Kenney Blocks", anchor_x="center", anchor_y="center")
      
-          
           arcade.draw_text(round(self.zeit,1), 10,624, arcade.color.BLACK_LEATHER_JACKET,30)
           if self.zeit > 0:
                arcade.draw_text(self.zahl,300,624,arcade.color.BARN_RED,30)
