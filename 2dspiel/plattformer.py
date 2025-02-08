@@ -12,7 +12,7 @@ class Plattformer(arcade.Window):
         
         self.setup()
     def setup(self):
-        self.zeit = 100
+        self.zeit = 500
         self.zahl = 0
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
@@ -107,6 +107,9 @@ class Plattformer(arcade.Window):
         
         arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
         
+        if self.spielfigur.center_x > 6000:
+            arcade.draw_text("WINNER", self.spielfigur.center_x, 350, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+
     def on_update(self, deltatime):
         if self.zeit > 0:
             self.spielfigur.update()
@@ -124,6 +127,7 @@ class Plattformer(arcade.Window):
                 self.spielfigur.kill()
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 3
+
 
                     
 Plattformer()
