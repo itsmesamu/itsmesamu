@@ -87,6 +87,7 @@ class Plattformer(arcade.Window):
         if screen_center_x > 5250:
             screen_center_x = 5250
 
+
         spielfigur_centered = screen_center_x, screen_center_y
         self.kamera.move_to(spielfigur_centered)
 
