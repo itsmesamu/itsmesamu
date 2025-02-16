@@ -110,6 +110,9 @@ class Plattformer(arcade.Window):
         if self.spielfigur.center_x > 6000 and self.zahl > 130:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
+        elif self.spielfigur.center_x > 6000 and self.zahl < 130:
+            arcade.draw_text("LOOSER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+
     def on_update(self, deltatime):
         if self.zeit > 0:
             self.spielfigur.update()
