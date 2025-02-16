@@ -57,7 +57,7 @@ class Plattformer(arcade.Window):
             if symbol == arcade.key.R:
                 self.setup()
             if symbol == arcade.key.DOWN:
-                self.spielfigur.change_x = 10
+                self.spielfigur.change_x = 2000
             
         
 
@@ -83,8 +83,8 @@ class Plattformer(arcade.Window):
         screen_center_y= self.spielfigur.center_y - (
             self.kamera.viewport_height / 2
         )
-        if screen_center_x < 0:
-            screen_center_x = 0
+        if screen_center_x < 16:
+            screen_center_x = 16
         if screen_center_y < 0:
             screen_center_y = 0
         if screen_center_x > 5250:
