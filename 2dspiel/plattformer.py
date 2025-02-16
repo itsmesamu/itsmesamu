@@ -43,20 +43,23 @@ class Plattformer(arcade.Window):
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
+    
     def on_key_press(self,symbol,modifiers):
-        if symbol == arcade.key.RIGHT:
-            self.spielfigur.change_x = 2
-        if symbol == arcade.key.LEFT:
-            self.spielfigur.change_x = -2
-        if symbol == arcade.key.SPACE:
-            self.spielfigur.change_y = 4
-        if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
-            if arcade.key.UP:
-                self.spielfigur.change_y = 5
-        if symbol == arcade.key.R:
-            self.setup()
-        if symbol == arcade.key.DOWN:
-            self.spielfigur.change_x = 10
+            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
+                    if arcade.key.UP:
+                        self.spielfigur.change_y = 5  
+            if symbol == arcade.key.RIGHT:
+                self.spielfigur.change_x = 2
+            if symbol == arcade.key.LEFT:
+                    self.spielfigur.change_x = -2
+            if symbol == arcade.key.SPACE:
+                self.spielfigur.change_y = 4
+            if symbol == arcade.key.R:
+                self.setup()
+            if symbol == arcade.key.DOWN:
+                self.spielfigur.change_x = 10
+            
+        
 
             
 
