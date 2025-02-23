@@ -31,6 +31,10 @@ class Plattformer(arcade.Window):
 
         self.szene.get_sprite_list("Tile Layer 1")
 
+        self.szene.get_sprite_list("fruit 1")
+        
+        self.szene.get_sprite_list("fruit 2")
+        
         self.szene.get_sprite_list("leiter layer")
 
         self.szene.get_sprite_list("power ups")
@@ -41,6 +45,10 @@ class Plattformer(arcade.Window):
         
         self.kamera = arcade.Camera(self.width, self.height)
 
+        self.geschwindigkeit = 2
+        self.geschwindigkeit2 = -2
+        self.höhe = 4
+
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
     
@@ -49,21 +57,20 @@ class Plattformer(arcade.Window):
                     if arcade.key.UP:
                         self.spielfigur.change_y = 5  
             if symbol == arcade.key.RIGHT:
-                self.spielfigur.change_x = 2
+                self.spielfigur.change_x = self.geschwindigkeit
             if symbol == arcade.key.LEFT:
-                    self.spielfigur.change_x = -2
+                    self.spielfigur.change_x = self.geschwindigkeit2
             if symbol == arcade.key.SPACE:
-                self.spielfigur.change_y = 4
+                self.spielfigur.change_y = self.höhe
             if symbol == arcade.key.R:
                 self.setup()
             if symbol == arcade.key.DOWN:
-                self.spielfigur.change_x = 2000
-            
-        
-
-            
-
-        
+                self.spielfigur.change_x = 10
+            if symbol == arcade.key.C:
+                 self.spielfigur.change_x = -10
+            if symbol == arcade.key.Q:
+                 arcade.exit()
+    
     def on_key_release(self,symbol,modifiers):
         if symbol==arcade.key.RIGHT:
             self.spielfigur.change_x = 0
@@ -73,10 +80,8 @@ class Plattformer(arcade.Window):
             self.spielfigur.change_y=-5
         if symbol == arcade.key.DOWN:
             self.spielfigur.change_x = 0
-
-
-            
-
+        if symbol == arcade.key.C:
+             self.spielfigur.change_x = 0
 
     def center_camera_to_player(self):
         screen_center_x = self.spielfigur.center_x - (self.kamera.viewport_width / 2)
@@ -98,8 +103,8 @@ class Plattformer(arcade.Window):
         self.clear()
         self.kamera.use()
         self.szene.draw()
-        if self.spielfigur.center_y < 0:
-            arcade.draw_text("LOOSER",self.spielfigur.center_x, 300, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+        if self.spielfigur.center_y < 175:
+            arcade.draw_text("LOOSER",self.spielfigur.center_x, self.spielfigur.center_y, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
         arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, 750, arcade.color.BLACK_LEATHER_JACKET, 30)
         
@@ -126,14 +131,29 @@ class Plattformer(arcade.Window):
             self.center_camera_to_player() 
             self.center_camera_to_player()
             self.zeit = self.zeit - deltatime
+            
             self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
             for arcade.sprite in self.hitliste:
                 arcade.sprite.kill()
                 self.zahl = self.zahl + 1
+            
+            self.hitliste2 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 1"))
+            for arcade.sprite in self.hitliste2:
+                arcade.sprite.kill() 
+                self.geschwindigkeit = self.geschwindigkeit + 1
+                self.geschwindigkeit2 = self.geschwindigkeit2 - 1
+            
+            self.hitliste3 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 2"))
+            for arcade.sprite in self.hitliste3:
+                 arcade.sprite.kill()
+                 self.höhe = self.höhe + 1
+
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
+            
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 3
+
 
 
                     
