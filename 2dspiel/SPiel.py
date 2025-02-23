@@ -94,7 +94,7 @@ class Spiel(arcade.Window):
 
         arcade.draw_text(round(self.zeit,1), 600,30, arcade.color.BLACK_LEATHER_JACKET, 30)
 
-        if self.anzahl == 500:
+        if self.anzahl == 3:
             arcade.draw_lrtb_rectangle_filled(0, 800, 600, 0, arcade.color.BLACK_LEATHER_JACKET)
             arcade.draw_text("!!!!!VICTORY!!!!!", 400, 300, arcade.color.WHITE, font_size=30, font_name="Kenney Blocks", anchor_x="center", anchor_y="center")
 

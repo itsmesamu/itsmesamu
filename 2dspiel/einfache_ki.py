@@ -9,7 +9,7 @@ model = GPT2LMHeadModel.from_pretrained(model_name)
 # Modell in den Evaluierungsmodus setzen (kein Training nötig)
 model.eval()
 
-def generate_text(prompt, max_length=30, temperature=0.8):
+def generate_text(prompt, max_length=48, temperature=0.7):
 
     # Eingabetext in Token umwandeln
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
@@ -19,8 +19,8 @@ def generate_text(prompt, max_length=30, temperature=0.8):
         input_ids, 
         max_length=max_length, 
         temperature=temperature,  # Kreativität des Outputs
-        top_k=25,  # Reduziert Unsinn durch Begrenzung der Wahrscheinlichkeiten
-        top_p=0.95,  # Kontrolliert Varianz
+        top_k=24,  # Reduziert Unsinn durch Begrenzung der Wahrscheinlichkeiten
+        top_p=1,  # Kontrolliert Varianz
         do_sample=True  # Sampling anstatt Greedy Decoding
     )
 
@@ -28,6 +28,6 @@ def generate_text(prompt, max_length=30, temperature=0.8):
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 # Beispielaufruf
-prompt = "Sam ist"
+prompt = "Benedek ist"
 generated_text = generate_text(prompt)
 print(generated_text)
