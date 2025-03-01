@@ -24,10 +24,10 @@ class Plattformer(arcade.Window):
 
         self.spielfigur = arcade.Sprite("knighte.png")
         self.spielfigur.center_x = 160
-        self.spielfigur.center_y = 510
+        self.spielfigur.center_y = 700
         self.szene.add_sprite("Spielfigur",self.spielfigur)
 
-    
+        self.szene.get_sprite_list("fruit 3")
 
         self.szene.get_sprite_list("Tile Layer 1")
 
@@ -90,8 +90,8 @@ class Plattformer(arcade.Window):
         )
         if screen_center_x < 16:
             screen_center_x = 16
-        if screen_center_y < 0:
-            screen_center_y = 0
+        if screen_center_y < 38:
+            screen_center_y = 38 
         if screen_center_x > 5250:
             screen_center_x = 5250
 
@@ -142,11 +142,17 @@ class Plattformer(arcade.Window):
                 arcade.sprite.kill() 
                 self.geschwindigkeit = self.geschwindigkeit + 1
                 self.geschwindigkeit2 = self.geschwindigkeit2 - 1
+                
             
             self.hitliste3 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 2"))
             for arcade.sprite in self.hitliste3:
                  arcade.sprite.kill()
-                 self.höhe = self.höhe + 1
+                 self.höhe = self.höhe + 1  
+                 
+            self.hitliste4 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 3"))
+            for arcade.sprite in self.hitliste4:
+                 arcade.sprite.kill()
+                 self.spielfigur.scale = 1.3
 
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
