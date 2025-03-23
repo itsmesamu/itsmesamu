@@ -167,6 +167,10 @@ class Plattformer(arcade.Window):
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 3
+            
+            self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("extras"))
+            for arcade.sprite in self.hitliste5:
+                 
 
 
 
