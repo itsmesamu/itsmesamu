@@ -8,7 +8,7 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(1000,700,"Plattformer")
+        super().__init__(2000,1000,"Plattformer")
         
         self.setup()
     def setup(self):
@@ -21,7 +21,7 @@ class Plattformer(arcade.Window):
         self.tile_map= arcade.load_tilemap("map.tmx")
 
         self.szene = arcade.Scene.from_tilemap(self.tile_map)
-
+        
         self.spielfigur = arcade.Sprite("knighte.png")
         self.spielfigur.center_x = 160
         self.spielfigur.center_y = 700
@@ -137,6 +137,7 @@ class Plattformer(arcade.Window):
             self.kamera.update()
             self.center_camera_to_player() 
             self.center_camera_to_player()
+
             self.zeit = self.zeit - deltatime
             
             self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
