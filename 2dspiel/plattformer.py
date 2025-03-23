@@ -31,6 +31,10 @@ class Plattformer(arcade.Window):
 
         self.szene.get_sprite_list("Tile Layer 1")
 
+        self.szene.get_sprite_list("pilz")
+
+        self.szene.get_sprite_list("jump")
+
         self.szene.get_sprite_list("fruit 1")
         
         self.szene.get_sprite_list("fruit 2")
@@ -55,7 +59,10 @@ class Plattformer(arcade.Window):
     def on_key_press(self,symbol,modifiers):
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
                     if arcade.key.UP:
-                        self.spielfigur.change_y = 5  
+                        self.spielfigur.change_y = 6
+            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
+                if arcade.key.UP:
+                    self.spielfigur.change_y = 20
             if symbol == arcade.key.RIGHT:
                 self.spielfigur.change_x = self.geschwindigkeit
             if symbol == arcade.key.LEFT:
@@ -103,8 +110,8 @@ class Plattformer(arcade.Window):
         self.clear()
         self.kamera.use()
         self.szene.draw()
-        if self.spielfigur.center_y < 175:
-            arcade.draw_text("LOOSER",self.spielfigur.center_x, self.spielfigur.center_y, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
+        if self.spielfigur.center_y < 0:
+            arcade.draw_text("LOOSER",self.spielfigur.center_x, 350, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
         arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, 750, arcade.color.BLACK_LEATHER_JACKET, 30)
         
@@ -152,7 +159,7 @@ class Plattformer(arcade.Window):
             self.hitliste4 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 3"))
             for arcade.sprite in self.hitliste4:
                  arcade.sprite.kill()
-                 self.spielfigur.scale = 1.3
+                 self.spielfigur.scale = 1.5
 
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
