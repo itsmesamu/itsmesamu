@@ -43,6 +43,8 @@ class Plattformer(arcade.Window):
 
         self.szene.get_sprite_list("power ups")
 
+        self.szene.get_sprite_list("power ups")
+
         self.szene.get_sprite_list("lava layer")
 
         self.szene.get_sprite_list("eis layer")
@@ -53,13 +55,15 @@ class Plattformer(arcade.Window):
         self.geschwindigkeit2 = -2
         self.höhe = 4
 
+        self.pilz = 
+
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
     
     def on_key_press(self,symbol,modifiers):
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
                     if arcade.key.UP:
-                        self.spielfigur.change_y = 6
+                        self.spielfigur.change_y = self.höhe + 2
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
                 if arcade.key.UP:
                     self.spielfigur.change_y = 20
@@ -160,6 +164,10 @@ class Plattformer(arcade.Window):
             for arcade.sprite in self.hitliste4:
                  arcade.sprite.kill()
                  self.spielfigur.scale = 1.5
+
+            self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power upsss"))
+            for arcade.sprite in self.hitliste5:
+                arcade.sprite.kill()  
 
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
