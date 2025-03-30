@@ -55,7 +55,7 @@ class Plattformer(arcade.Window):
         self.geschwindigkeit2 = -2
         self.höhe = 4
 
-        self.pilz = 
+        self.pilz = arcade.Sprite("pilz.png")
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
@@ -168,7 +168,9 @@ class Plattformer(arcade.Window):
 
             self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power upsss"))
             for arcade.sprite in self.hitliste5:
-                arcade.sprite.kill()  
+                arcade.sprite.kill()
+                self.pilz.center_x = 400
+                self.pilz.center_y = 400
 
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
