@@ -8,7 +8,7 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(2000,1000,"Plattformer")
+        super().__init__(1000,800,"Plattformer")
         
         self.setup()
     def setup(self):
@@ -56,6 +56,7 @@ class Plattformer(arcade.Window):
         self.höhe = 4
 
         self.pilz = arcade.Sprite("pilz.png")
+        self.dia = arcade.Sprite("dia.png")
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
@@ -166,22 +167,25 @@ class Plattformer(arcade.Window):
                  arcade.sprite.kill()
                  self.spielfigur.scale = 1.5
 
-            self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power upsss"))
+            self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("extras"))
             for arcade.sprite in self.hitliste5:
                 arcade.sprite.kill()
-                self.pilz.center_x = 400
-                self.pilz.center_y = 400
+                self.pilz.center_x = 1300
+                self.pilz.center_y = 470
+                self.szene.add_sprite("pilz", self.pilz)
 
+            if arcade.check_for_collision(self.spielfigur, self.pilz):
+                 self.pilz.kill()
+                 self.dia.center_x = 1400
+                 self.dia.center_y = 700
+                 self.szene.add_sprite("dia", self.dia)
+
+            
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 3
-        
-                 
-
-
-
-                    
+                     
 Plattformer()
 arcade.run()
