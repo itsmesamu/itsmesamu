@@ -184,8 +184,7 @@ class Plattformer(arcade.Window):
                 
             if arcade.check_for_collision(self.spielfigur, self.pilz2):
                 self.pilz2.kill()
-                self.pilz2.remove_from_sprite_lists()
-                self.zeit = self.zeit + 60
+                self.zeit = self.zeit + 1
 
             if arcade.check_for_collision(self.spielfigur, self.pilz):
                 self.pilz.kill()
