@@ -31,7 +31,7 @@ class Plattformer(arcade.Window):
 
         self.szene.get_sprite_list("Tile Layer 1")
 
-        self.szene.get_sprite_list("pilz")
+        self.szene.get_sprite_list("power ups3")
 
         self.szene.get_sprite_list("jump")
 
@@ -56,7 +56,7 @@ class Plattformer(arcade.Window):
         self.höhe = 4
 
         self.pilz = arcade.Sprite("pilz.png")
-        self.dia = arcade.Sprite("dia.png")
+        self.pilz2 = arcade.Sprite("pilz.png")
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
     
@@ -128,6 +128,7 @@ class Plattformer(arcade.Window):
         
         arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
         
+        
         if self.spielfigur.center_x > 6000 and self.zahl > 130:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
@@ -174,13 +175,22 @@ class Plattformer(arcade.Window):
                 self.pilz.center_y = 470
                 self.szene.add_sprite("pilz", self.pilz)
 
-            if arcade.check_for_collision(self.spielfigur, self.pilz):
-                 self.pilz.kill()
-                 self.dia.center_x = 1400
-                 self.dia.center_y = 700
-                 self.szene.add_sprite("dia", self.dia)
+            self.hitliste6 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups3"))
+            for arcade.sprite in self.hitliste6:
+                arcade.sprite.kill()
+                self.pilz2.center_x = 2247
+                self.pilz2.center_y = 182
+                self.szene.add_sprite("pilz", self.pilz2)
+                
+            if arcade.check_for_collision(self.spielfigur, self.pilz2):
+                self.pilz2.kill()
+                self.pilz2.remove_from_sprite_lists()
+                self.zeit = self.zeit + 60
 
-            
+            if arcade.check_for_collision(self.spielfigur, self.pilz):
+                self.pilz.kill()
+                self.zeit = 0.000000000000000000000000000000000000000000000000000000000000001
+                        
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
             
