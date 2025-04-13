@@ -8,7 +8,7 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(1000,800,"Plattformer")
+        super().__init__(1000,700,"Plattformer")
         
         self.setup()
     def setup(self):
@@ -118,7 +118,7 @@ class Plattformer(arcade.Window):
         if self.spielfigur.center_y < 0:
             arcade.draw_text("LOOSER",self.spielfigur.center_x, 350, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
-        arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, 750, arcade.color.BLACK_LEATHER_JACKET, 30)
+        arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 30)
         
         if self.zeit < 0:
             arcade.draw_text("LOOSER",self.spielfigur.center_x, 400, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
@@ -168,6 +168,7 @@ class Plattformer(arcade.Window):
                  arcade.sprite.kill()
                  self.spielfigur.scale = 1.5
 
+
             self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("extras"))
             for arcade.sprite in self.hitliste5:
                 arcade.sprite.kill()
@@ -183,18 +184,17 @@ class Plattformer(arcade.Window):
                 self.szene.add_sprite("pilz", self.pilz2)
                 
             if arcade.check_for_collision(self.spielfigur, self.pilz2):
-                self.pilz2.kill()
-                self.zeit = self.zeit + 1
-
+                self.zeit = self.zeit - 5
+            
             if arcade.check_for_collision(self.spielfigur, self.pilz):
                 self.pilz.kill()
-                self.zeit = 0.000000000000000000000000000000000000000000000000000000000000001
+                self.zeit = 0.00000000000000000000000000000000000000000000000000000000000001
                         
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
-                self.spielfigur.change_x = 3
+                self.spielfigur.change_x = 4
                      
 Plattformer()
 arcade.run()
