@@ -12,7 +12,7 @@ class Plattformer(arcade.Window):
         
         self.setup()
     def setup(self):
-        self.zeit = 500
+        self.zeit = 300
         self.zahl = 0
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
