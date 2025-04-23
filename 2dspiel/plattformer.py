@@ -129,7 +129,7 @@ class Plattformer(arcade.Window):
         arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
         
         
-        if self.spielfigur.center_x > 6000 and self.zahl > 130:
+        if self.spielfigur.center_x > 6000 and self.zahl > 90:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
         elif self.spielfigur.center_x > 6000 and self.zahl < 130:
@@ -188,13 +188,13 @@ class Plattformer(arcade.Window):
             
             if arcade.check_for_collision(self.spielfigur, self.pilz):
                 self.pilz.kill()
-                self.zeit = 0.00000000000000000000000000000000000000000000000000000000000001
+                self.zeit = 0.001
                         
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 self.spielfigur.kill()
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
-                self.spielfigur.change_x = 4
+                self.spielfigur.change_x = 2
                      
 Plattformer()
 arcade.run()

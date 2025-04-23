@@ -152,6 +152,7 @@ class Labyrinth(arcade.Window):
                  self.zahl = self.zahl +1
                  self.gegenstand_liste2.update()
                self.Schussliste.update()
+
                
                
                if arcade.check_for_collision(self.patrone,self.scheibe1):
@@ -185,18 +186,18 @@ class Labyrinth(arcade.Window):
                  self.scheibe1.center_x = random.randrange(50,760)
                  self.scheibe1.center_y = random.randrange(50,590)
 
-               if arcade.check_for_collision_with_list(self.patrone,self.treffliste):
+               if arcade.check_for_collision(self.patrone,self.scheibe1):
                    self.zähler = self.zähler +1
                
-               if arcade.check_for_collision_with_list(self.patrone2,self.treffliste):
+               if arcade.check_for_collision(self.patrone2,self.scheibe1):
                    self.zähler=self.zähler +1
                    
 
-               if arcade.check_for_collision_with_list(self.patrone3,self.treffliste):
+               if arcade.check_for_collision(self.patrone3,self.scheibe1):
                    self.zähler=self.zähler+1
                    
 
-               if arcade.check_for_collision_with_list(self.patrone4,self.treffliste):
+               if arcade.check_for_collision(self.patrone4,self.scheibe1):
                    self.zähler=self.zähler+1
                 
               
@@ -228,7 +229,7 @@ class Labyrinth(arcade.Window):
                arcade.draw_text("Loser",50,100,arcade.color.BARN_RED,200)
 
           if self.zähler < 0:
-              arcade.draw_text(round(self.zähler,1),100,100,arcade.color.BLACK_LEATHER_JACKET,30)
+              arcade.draw_text(100,100,arcade.color.BLACK_LEATHER_JACKET,30)
           
           
           
