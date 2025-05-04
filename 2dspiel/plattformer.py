@@ -8,7 +8,7 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(1000,700,"Plattformer")
+        super().__init__(1600,1200,"Plattformer")
         
         self.setup()
     def setup(self):
@@ -35,6 +35,8 @@ class Plattformer(arcade.Window):
 
         self.szene.get_sprite_list("jump")
 
+        self.szene.get_sprite_list("jump-")
+
         self.szene.get_sprite_list("fruit 1")
         
         self.szene.get_sprite_list("fruit 2")
@@ -48,6 +50,8 @@ class Plattformer(arcade.Window):
         self.szene.get_sprite_list("lava layer")
 
         self.szene.get_sprite_list("eis layer")
+
+        self.szene.get_sprite_list("jump2")
         
         self.kamera = arcade.Camera(self.width, self.height)
 
@@ -63,11 +67,17 @@ class Plattformer(arcade.Window):
     
     def on_key_press(self,symbol,modifiers):
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
-                    if arcade.key.UP:
+                    if arcade.key:
                         self.spielfigur.change_y = self.höhe + 2
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
-                if arcade.key.UP:
+                if arcade.key:
                     self.spielfigur.change_y = 20
+            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump-")):
+                if arcade.key:
+                    self.spielfigur.center_x = 4506
+            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump2")):
+                if arcade.key:
+                    self.spielfigur.change_y = 10
             if symbol == arcade.key.RIGHT:
                 self.spielfigur.change_x = self.geschwindigkeit
             if symbol == arcade.key.LEFT:
@@ -127,7 +137,8 @@ class Plattformer(arcade.Window):
                 arcade.draw_text("LOOSER",self.spielfigur.center_x, 400, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
         
         arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
-        
+
+        arcade.draw_text(self.spielfigur.center_x,self.spielfigur.center_x + 700, 750, arcade.color.BARN_RED)
         
         if self.spielfigur.center_x > 6000 and self.zahl > 90:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
@@ -166,7 +177,7 @@ class Plattformer(arcade.Window):
             self.hitliste4 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("fruit 3"))
             for arcade.sprite in self.hitliste4:
                  arcade.sprite.kill()
-                 self.spielfigur.scale = 1.5
+                 self.spielfigur.scale = 1.3
 
 
             self.hitliste5 = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("extras"))
@@ -194,7 +205,7 @@ class Plattformer(arcade.Window):
                 self.spielfigur.kill()
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
-                self.spielfigur.change_x = 2
+                self.spielfigur.change_x = 1
                      
 Plattformer()
 arcade.run()
