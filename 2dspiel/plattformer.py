@@ -1,5 +1,6 @@
 import arcade.color
 import arcade.color
+import arcade.color
 import arcade.key
 import pyglet
 pyglet.options["osx_alt_loop"]  = True
@@ -8,11 +9,11 @@ import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
-        super().__init__(1600,1200,"Plattformer")
+        super().__init__(900,700,"Plattformer")
         
         self.setup()
     def setup(self):
-        self.zeit = 300
+        self.zeit = 160
         self.zahl = 0
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
 
@@ -26,6 +27,7 @@ class Plattformer(arcade.Window):
         self.spielfigur.center_x = 160
         self.spielfigur.center_y = 700
         self.szene.add_sprite("Spielfigur",self.spielfigur)
+        
 
         self.szene.get_sprite_list("fruit 3")
 
@@ -136,9 +138,9 @@ class Plattformer(arcade.Window):
         if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
                 arcade.draw_text("LOOSER",self.spielfigur.center_x, 400, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
         
-        arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, 750, arcade.color.BARN_RED, 30)
+        arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, self.spielfigur.center_y + 200, arcade.color.BARN_RED, 30)
 
-        arcade.draw_text(self.spielfigur.center_x,self.spielfigur.center_x + 700, 750, arcade.color.BARN_RED)
+        arcade.draw_text(self.spielfigur.center_x, self.spielfigur.center_x, self.spielfigur.center_y + 150, arcade.color.BARN_RED)
         
         if self.spielfigur.center_x > 6000 and self.zahl > 90:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
