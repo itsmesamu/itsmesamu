@@ -3,7 +3,7 @@ import socket
 def aktion():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    server_ip = "192.168.178.57"
+    server_ip = "127.0.0.1"
     server_port = 8000
 
     client.connect((server_ip, server_port))
