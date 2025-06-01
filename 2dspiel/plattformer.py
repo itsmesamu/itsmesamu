@@ -25,7 +25,11 @@ class Plattformer(arcade.Window):
         self.spielfigur.center_x = 160
         self.spielfigur.center_y = 700
         self.szene.add_sprite("Spielfigur",self.spielfigur)
-        
+
+        self.monster = arcade.Sprite("monster.png")
+        self.monster.center_x = 918
+        self.monster.center_y = 520
+        self.szene.add_sprite("monster", self.monster)
 
         self.szene.get_sprite_list("fruit 3")
 
@@ -57,7 +61,7 @@ class Plattformer(arcade.Window):
 
         self.geschwindigkeit = 2
         self.geschwindigkeit2 = -2
-        self.höhe = 4
+        self.höhe = 4.5
 
         self.pilz = arcade.Sprite("pilz.png")
         self.pilz2 = arcade.Sprite("pilz.png")
@@ -68,7 +72,7 @@ class Plattformer(arcade.Window):
     def on_key_press(self,symbol,modifiers):
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
                     if arcade.key:
-                        self.spielfigur.change_y = self.höhe + 2
+                        self.spielfigur.change_y = self.höhe + 2.5
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
                 if arcade.key:
                     self.spielfigur.change_y = 20
@@ -92,6 +96,13 @@ class Plattformer(arcade.Window):
                  self.spielfigur.change_x = -10
             if symbol == arcade.key.Q:
                  arcade.exit()
+            if symbol == arcade.key.D:
+                self.spielfigur.change_x = self.geschwindigkeit
+            if symbol == arcade.key.A:
+                    self.spielfigur.change_x = self.geschwindigkeit2
+            if symbol == arcade.key.W:
+                    self.spielfigur.change_y = self.höhe
+
     
     def on_key_release(self,symbol,modifiers):
         if symbol==arcade.key.RIGHT:
@@ -104,6 +115,13 @@ class Plattformer(arcade.Window):
             self.spielfigur.change_x = 0
         if symbol == arcade.key.C:
              self.spielfigur.change_x = 0
+        if symbol==arcade.key.D:
+            self.spielfigur.change_x = 0
+        if symbol==arcade.key.A:
+            self.spielfigur.change_x = 0
+        if symbol==arcade.key.W:
+            self.spielfigur.change_y = 0
+
 
     def center_camera_to_player(self):
         screen_center_x = self.spielfigur.center_x - (self.kamera.viewport_width / 2)
@@ -128,7 +146,7 @@ class Plattformer(arcade.Window):
         if self.spielfigur.center_y < 0:
             arcade.draw_text("LOOSER",self.spielfigur.center_x, 350, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
-        arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
+        arcade.draw_text(round(self.zeit,-1), self.spielfigur.center_x - 150, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
         arcade.draw_text("Zeit:", self.spielfigur.center_x - 190, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
         
         if self.zeit < 0:
@@ -139,13 +157,14 @@ class Plattformer(arcade.Window):
         
         arcade.draw_text(self.zahl,self.spielfigur.center_x + 150, self.spielfigur.center_y + 200, arcade.color.BARN_RED)
         arcade.draw_text("Münzen:", self.spielfigur.center_x + 85, self.spielfigur.center_y + 200, arcade.color.BARN_RED)
-        arcade.draw_text("-> Ziel: mehr als 90", self.spielfigur.center_x + 170, self.spielfigur.center_y + 200, arcade.color.BARN_RED)
+        arcade.draw_text("-> Ziel: mehr als 100", self.spielfigur.center_x + 170, self.spielfigur.center_y + 200, arcade.color.BARN_RED)
 
         arcade.draw_text(self.spielfigur.center_x, self.spielfigur.center_x, self.spielfigur.center_y + 150, arcade.color.BARN_RED)
         arcade.draw_text("X Koordinate:", self.spielfigur.center_x - 100,self.spielfigur.center_y + 150,arcade.color.BARN_RED)
         arcade.draw_text("-> Ziel: 6000", self.spielfigur.center_x + 55, self.spielfigur.center_y + 150, arcade.color.BARN_RED)
+        arcade.draw_text(self.spielfigur.center_y, self.spielfigur.center_x, self.spielfigur.center_y + 125, arcade.color.BARN_RED)
         
-        if self.spielfigur.center_x > 6000 and self.zahl > 90:
+        if self.spielfigur.center_x > 6000 and self.zahl > 100:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
         elif self.spielfigur.center_x > 6000 and self.zahl < 130:
