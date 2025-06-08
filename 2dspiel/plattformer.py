@@ -1,6 +1,7 @@
 import arcade.color
 import arcade.key
 import pyglet
+import math
 pyglet.options["osx_alt_loop"]  = True
 
 import arcade
@@ -14,8 +15,9 @@ class Plattformer(arcade.Window):
         self.zeit = 170
         self.zahl = 0
         arcade.set_background_color(arcade.color.AIR_FORCE_BLUE)
+        self.balls = arcade.SpriteList()
 
-
+        self.monster_shoot_timer = 0
 
         self.tile_map= arcade.load_tilemap("map.tmx")
 
@@ -94,7 +96,7 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_x = 10
             if symbol == arcade.key.C:
                  self.spielfigur.change_x = -10
-            if symbol == arcade.key.Q:
+            if symbol == arcade.key.T:
                  arcade.exit()
             if symbol == arcade.key.D:
                 self.spielfigur.change_x = self.geschwindigkeit
@@ -143,10 +145,12 @@ class Plattformer(arcade.Window):
         self.clear()
         self.kamera.use()
         self.szene.draw()
+        self.balls.draw()
+        
         if self.spielfigur.center_y < 0:
             arcade.draw_text("LOOSER",self.spielfigur.center_x, 350, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
 
-        arcade.draw_text(round(self.zeit,-1), self.spielfigur.center_x - 150, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
+        arcade.draw_text(round(self.zeit,1), self.spielfigur.center_x - 150, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
         arcade.draw_text("Zeit:", self.spielfigur.center_x - 190, self.spielfigur.center_y + 200, arcade.color.BLACK_LEATHER_JACKET, 15)
         
         if self.zeit < 0:
@@ -178,7 +182,28 @@ class Plattformer(arcade.Window):
             self.kamera.update()
             self.center_camera_to_player() 
             self.center_camera_to_player()
+            self.balls.update()
+            self.monster_shoot_timer -= deltatime
 
+            monster_pos = [self.monster.center_x, self.monster.center_y]
+        player_pos = [self.spielfigur.center_x, self.spielfigur.center_y]
+        distance = math.hypot(player_pos[0] - monster_pos[0], player_pos[1] - monster_pos[1])
+        if distance < 100 and self.monster_shoot_timer <= 0:
+            dx = player_pos[0] - monster_pos[0]
+            dy = player_pos[1] - monster_pos[1]
+            length = math.hypot(dx, dy)
+            if length != 0 :
+                direction = (dx / length, dy / length)
+                ball = arcade.Sprite("ball.png", scale=1)
+                ball.center_x = monster_pos[0]
+                ball.center_y = monster_pos[1]
+                speed = 5
+                ball.change_x = direction[0] * speed
+                ball.change_y = direction[1] * speed
+                self.balls.append(ball)
+                self.szene.add_sprite("ball", ball)
+                self.monster_shoot_timer = 0.5
+    
             self.zeit = self.zeit - deltatime
             
             self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
