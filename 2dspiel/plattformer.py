@@ -29,8 +29,8 @@ class Plattformer(arcade.Window):
         self.szene.add_sprite("Spielfigur",self.spielfigur)
 
         self.monster = arcade.Sprite("monster.png")
-        self.monster.center_x = 918
-        self.monster.center_y = 520
+        self.monster.center_x = 900
+        self.monster.center_y = 502
         self.szene.add_sprite("monster", self.monster)
 
         self.szene.get_sprite_list("fruit 3")
@@ -185,26 +185,7 @@ class Plattformer(arcade.Window):
             self.balls.update()
             self.monster_shoot_timer -= deltatime
 
-            monster_pos = [self.monster.center_x, self.monster.center_y]
-        player_pos = [self.spielfigur.center_x, self.spielfigur.center_y]
-        distance = math.hypot(player_pos[0] - monster_pos[0], player_pos[1] - monster_pos[1])
-        if distance < 100 and self.monster_shoot_timer <= 0:
-            dx = player_pos[0] - monster_pos[0]
-            dy = player_pos[1] - monster_pos[1]
-            length = math.hypot(dx, dy)
-            if length != 0 :
-                direction = (dx / length, dy / length)
-                ball = arcade.Sprite("ball.png", scale=1)
-                ball.center_x = monster_pos[0]
-                ball.center_y = monster_pos[1]
-                speed = 5
-                ball.change_x = direction[0] * speed
-                ball.change_y = direction[1] * speed
-                self.balls.append(ball)
-                self.szene.add_sprite("ball", ball)
-                self.monster_shoot_timer = 0.5
-    
-            self.zeit = self.zeit - deltatime
+
             
             self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
             for arcade.sprite in self.hitliste:
@@ -255,5 +236,26 @@ class Plattformer(arcade.Window):
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 1
                      
+            monster_pos = [self.monster.center_x, self.monster.center_y]
+        player_pos = [self.spielfigur.center_x, self.spielfigur.center_y]
+        distance = math.hypot(player_pos[0] - monster_pos[0], player_pos[1] - monster_pos[1])
+        if distance < 100 and self.monster_shoot_timer <= 0:
+            dx = player_pos[0] - monster_pos[0]
+            dy = player_pos[1] - monster_pos[0]
+            length = math.hypot(dx, dy)
+            if length != 0 :
+                direction = (dx / length, dy / length)
+                ball = arcade.Sprite("ball.png", scale=1)
+                ball.center_x = monster_pos[0]
+                ball.center_y = monster_pos[1]
+                speed = 7
+                ball.change_x = direction[1] * speed
+                ball.change_y = direction[1] * speed
+                self.balls.append(ball)
+                self.szene.add_sprite("ball", ball)
+                self.monster_shoot_timer = 0.3
+    
+            self.zeit = self.zeit - deltatime
+
 Plattformer()
 arcade.run()

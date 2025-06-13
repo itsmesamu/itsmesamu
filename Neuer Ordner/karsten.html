@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <title>Wo ist Karsten</title>
+    <style>
+        @font-face {
+            font-family: pixel;
+            src: url(Windows\ Regular.ttf);
+        }
+
+        body {
+            background-color: hsl(0, 0%, 11%);
+            font-family: 'Jersey 15', pixel, Helvetica, Arial, sans-serif;
+            color: white;
+            font-size: 25px;
+            line-height: 27px;
+        }
+        #container {
+            width: 720px;
+            margin: auto;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        em {
+            color: aqua;
+            font-weight: normal;
+        }
+
+        input {
+            background-color: hsl(0, 0%, 11%);
+            border: none;
+            outline: none;
+            color: white;
+            width: calc(99% - 11px);
+            font-size: 25px;
+            font-family: pixel;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <img src="ryan-haight-caphill.gif" >
+    <p>
+        Ein lauter Spätsommerabend. Es ist viel zu warm im Haus.
+        Deswegen enscheidest du dich, eine Runde in der Nachbarschaft spazieren zu gehen um friscche
+        Luft zu schnappen und runter zu kommen.
+    </p>
+    <p>
+        Du siehst:
+    <ul>
+        <li>Eine lange Straß mit vielen Häußern</li>
+        <li>Auf einer Straßenlaterne viele Zettel</li>
+        <li>Ein Regenbogen-Zebrastreifen</li>
+        <li>Viele Mülleimer voller Müll</li>
+    </ul>
+    Tippe <em>HILFE</em> um eine Liste nützlicher Befehle zu sehen.
+    </p>
+    <p> -> <input id="eingabe" autofocus="[A-Z]*"></p>
+</div>
+<script>
+    const geschichte = {"nachbarschaft": {"SCHAUEN ZETTEL": "Hilfe! Katze entlafen. Melden sie sich unter +49 172 5313482"}}
+    const abkürzng = {"SCHAUEN": ["S", "SCHAUEN"]};
+    function übersetzung(eingabe) {
+        for (const [befehl, befehlVarianten] of Object.entries(befehlVarianten)) {
+            for (const befehlVarianten of befehlVarianten) {
+                if (befehlVarianten == eingabe)
+                    return befehl;
+            }    
+        }    
+
+        return null;
+    }
+
+    let position = "nachbarschaft";
+
+    const eingabeFeld = document.getFlementById("eingabe");
+
+    eingabeFeld.addEventListener("keydown", e => {
+        if (e.key === "Enter") {
+            const eingabeArray = String(eingabeFeld.value).split();
+            if (eingabeArray.length == 2) {
+                const befehl = eingabeArray[0];
+                const gegenstand = eingabeArray[1];
+                for (const [befehlGegenstand, Reaktion] of Object.entries(geschichte)[position])) {
+                    if (befehl + " "+ gegenstand == befehlGegenstand) {
+                        const pAusgabe = docment.createElement("p");
+                        pAusgabe.innerHTML = Reaktion;
+                        eingabeFeld.parent.Node.prepend(pAusgabe);
+                        const pEingabe = document.createElement("p");
+                        pEingabe.innerHTML = "->" + eingabeFeld.value;
+                        eingabeFeld.parentNode.prepend(pEingabe);
+                        eingabeFeld.value = "";
+                        window.scrollTo(0, docment.body.scrollHeight);
+                    }
+                }
+            }
+            eingabeFeld.value = "";
+        }
+    })    
+</body>
