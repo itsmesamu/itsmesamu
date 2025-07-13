@@ -69,6 +69,25 @@ class Plattformer(arcade.Window):
         self.pilz2 = arcade.Sprite("pilz.png")
 
         self.physik_engine = arcade.PhysicsEnginePlatformer(self.spielfigur, self.szene.get_sprite_list("Tile Layer 1"))
+
+    def monster_shoot(self):
+        # Kugel-Sprite erstellen
+        bullet = arcade.SpriteCircle(5, arcade.color.RED_DEVIL)
+        bullet.center_x = self.monster.center_x
+        bullet.center_y = self.monster.center_y
+
+        # Richtung berechnen (zum Spieler hin)
+        dx = self.spielfigur.center_x - self.monster.center_x
+        dy = (self.spielfigur.center_y - 100) - self.monster.center_y
+        length = math.hypot(dx, dy)
+
+        # Geschwindigkeit skalieren (damit sie gleichmäßig fliegt)
+        speed = 10
+        bullet.change_x = dx / length * speed
+        bullet.change_y = dy / length * speed
+
+        self.balls.append(bullet)
+
     
     
     def on_key_press(self,symbol,modifiers):
@@ -186,7 +205,7 @@ class Plattformer(arcade.Window):
             self.monster_shoot_timer -= deltatime
             self.balls.update()
             self.zeit = self.zeit - deltatime
-
+            self.balls.update()
             
             self.hitliste = arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("power ups"))
             for arcade.sprite in self.hitliste:
@@ -235,19 +254,24 @@ class Plattformer(arcade.Window):
                 self.zeit = 0.0001
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
-                self.spielfigur.change_x = 1
+                self.spielfigur.change_x = 1                    
 
+                self.monster_shoot_timer -= deltatime
+            if self.monster_shoot_timer <= 0:
+                self.monster_shoot()
+                self.monster_shoot_timer = 2  # Alle 2 Sekunden schießen
+            
+            # Kugel-Bewegung
+            for bullet in self.balls:
+                bullet.center_x += bullet.change_x
+                bullet.center_y += bullet.change_y
 
-            #for self.sprite in self.szene:
-           #     distanz = math.dist(self.spielfigur, self.monster)
-            #    if distanz < 100:
-                     
-                 
-            #for ball in self.balls:
-              #   if arcade.check_for_collision(self.spielfigur, ball):
-               #     self.spielfigur.center_x = 160
-                #    self.spielfigur.center_y = 700
-                 #   ball.kill()                         
+            # Kollision prüfen
+            for bullet in self.balls:
+                if arcade.check_for_collision(bullet, self.spielfigur):
+                    self.zeit = 0.0001  # Spieler sofort verlieren
+                    bullet.kill()
+
 
 Plattformer()
 arcade.run()
