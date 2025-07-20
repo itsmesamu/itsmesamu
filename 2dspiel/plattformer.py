@@ -33,6 +33,11 @@ class Plattformer(arcade.Window):
         self.monster.center_y = 502
         self.szene.add_sprite("monster", self.monster)
 
+        self.monster2 = arcade.Sprite("monster.png")
+        self.monster2.center_x = 2728
+        self.monster2.center_y = 712
+        self.szene.add_sprite("monster2", self.monster2)
+
         self.szene.get_sprite_list("fruit 3")
 
         self.szene.get_sprite_list("Tile Layer 1")
@@ -76,16 +81,29 @@ class Plattformer(arcade.Window):
         bullet.center_y = self.monster.center_y
 
         dx = (self.spielfigur.center_x- 100) - self.monster.center_x
-        dy = (self.spielfigur.center_y -100) - self.monster.center_y
+        dy = (self.spielfigur.center_y -120) - self.monster.center_y
         length = math.hypot(dx, dy)
 
-        speed = 0.1
+        speed = 0.5
         bullet.change_x = dx / length * speed
         bullet.change_y = dy / length * speed
 
         self.balls.append(bullet)
 
-    
+    def monster_shoot2(self):
+        bullet = arcade.SpriteCircle(5, arcade.color.RED_DEVIL)
+        bullet.center_x = self.monster2.center_x
+        bullet.center_y = self.monster2.center_y
+
+        dx = (self.spielfigur.center_x- 100) - self.monster2.center_x
+        dy = (self.spielfigur.center_y -120) - self.monster2.center_y
+        length = math.hypot(dx, dy)
+
+        speed = 1.25
+        bullet.change_x = dx / length * speed
+        bullet.change_y = dy / length * speed
+
+        self.balls.append(bullet)
     
     def on_key_press(self,symbol,modifiers):
             if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
@@ -183,6 +201,7 @@ class Plattformer(arcade.Window):
         arcade.draw_text("X Koordinate:", self.spielfigur.center_x - 100,self.spielfigur.center_y + 150,arcade.color.BARN_RED)
         arcade.draw_text("-> Ziel: 6000", self.spielfigur.center_x + 55, self.spielfigur.center_y + 150, arcade.color.BARN_RED)
         arcade.draw_text(self.spielfigur.center_y, self.spielfigur.center_x, self.spielfigur.center_y + 125, arcade.color.BARN_RED)
+        arcade.draw_text("Y Koordinate:", self.spielfigur.center_x - 100,self.spielfigur.center_y + 125,arcade.color.BARN_RED)
         
         if self.spielfigur.center_x > 6000 and self.zahl > 100:
             arcade.draw_text("WINNER", self.spielfigur.center_x - 700, 500, arcade.color.BLACK_LEATHER_JACKET, font_size=100,font_name="Kenney Blocks",anchor_x="center",anchor_y="center")
@@ -249,33 +268,41 @@ class Plattformer(arcade.Window):
                 self.zeit = 0.001 
 
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("lava layer")):
-                self.zeit = 0.0001
+                self.zeit = 000000.1
             
             if arcade.check_for_collision_with_list(self.spielfigur,self.szene.get_sprite_list("eis layer")):
                 self.spielfigur.change_x = 1                 
 
-            distanz = math.hypot(self.spielfigur.center_x - self.monster.center_x, self.spielfigur.center_y - self.monster.center_y)
-            if distanz < 100:
+            distanz = math.hypot((self.spielfigur.center_x - 100) - self.monster.center_x, self.spielfigur.center_y - self.monster.center_y)
+            if distanz < 200:
                     if self.monster_shoot_timer <= 0:
                         self.monster_shoot()
-                        self.monster_shoot_timer = 2      
-
-            distanz2 = math.hypot(self.spielfigur.center_x - self.monster.center_x, self.spielfigur.center_y - self.monster.center_y)
-            if distanz2 < 100:
-                    if self.monster_shoot_timer <= 0:
-                        self.monster_shoot()
-                        self.monster_shoot_timer = 2      
+                        self.monster_shoot_timer = 3.5
 
             for bullet in self.balls:
                 bullet.center_x += bullet.change_x
-                bullet.center_y += bullet.change_y
+                bullet.center_y += bullet.change_y  
 
             
             for bullet in self.balls:
                 if arcade.check_for_collision(bullet, self.spielfigur):
-                    self.zeit = 0.0001 
+                    self.zeit = 0.001
                     bullet.kill()
+            
+            distanz2 = math.hypot((self.spielfigur.center_x - 100) - self.monster2.center_x, self.spielfigur.center_y - self.monster2.center_y)
+            if distanz2 < 400:
+                if self.monster_shoot_timer <= 0:
+                    self.monster_shoot2()
+                    self.monster_shoot_timer = 3.5
+            
+            for bullet in self.balls:
+                bullet.center_x += bullet.change_x
+                bullet.center_y += bullet.change_y
 
+            for bullet in self.balls:
+                if arcade.check_for_collision(bullet, self.spielfigur):
+                    self.zeit = 0.001
+                    bullet.kill()
 
 Plattformer()
 arcade.run()
