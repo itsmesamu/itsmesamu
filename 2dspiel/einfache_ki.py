@@ -19,7 +19,7 @@ def generate_text(prompt, max_length=128, temperature=0.5):
         input_ids, 
         max_length=max_length, 
         temperature=temperature,  # Kreativität des Outputs
-        top_k=22,  # Reduziert Unsinn durch Begrenzung der Wahrscheinlichkeiten
+        top_k=21,  # Reduziert Unsinn durch Begrenzung der Wahrscheinlichkeiten
         top_p=1,  # Kontrolliert Varianz
         do_sample=True  # Sampling anstatt Greedy Decoding
     )
@@ -28,6 +28,6 @@ def generate_text(prompt, max_length=128, temperature=0.5):
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 # Beispielaufruf
-prompt = "What do you think about chiaretta?"
+prompt = "Is there any shop in Karsfeld that is still open?"
 generated_text = generate_text(prompt)
 print(generated_text)
