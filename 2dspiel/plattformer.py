@@ -140,7 +140,6 @@ class Plattformer(arcade.Window):
         if symbol==arcade.key.W:
             self.spielfigur.change_y = 0
 
-
     def center_camera_to_player(self):
         screen_center_x = self.spielfigur.center_x - (self.kamera.viewport_width / 2)
         screen_center_y= self.spielfigur.center_y - (
@@ -255,7 +254,7 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_x = 1                 
 
             distanz = math.hypot(self.spielfigur.center_x - self.monster.center_x, self.spielfigur.center_y - self.monster.center_y)
-            if distanz < 100:
+            if distanz < 222:
                     if self.monster_shoot_timer <= 0:
                         self.monster_shoot()
                         self.monster_shoot_timer = 2      
@@ -270,12 +269,9 @@ class Plattformer(arcade.Window):
                 bullet.center_x += bullet.change_x
                 bullet.center_y += bullet.change_y
 
-            
             for bullet in self.balls:
                 if arcade.check_for_collision(bullet, self.spielfigur):
                     self.zeit = 0.0001 
                     bullet.kill()
-
-
 Plattformer()
 arcade.run()

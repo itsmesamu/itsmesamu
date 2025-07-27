@@ -1,0 +1,37 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "world_tileset.tsx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "world_tileset.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/Users/samuelpaloczy/Documents/GitHub/itsmesamu/2dspiel",
+    "last.worldFilePath": "/Users/samuelpaloczy/Documents/GitHub/itsmesamu/2dspiel",
+    "loadedWorlds": [
+        "/Users/samuelpaloczy/Documents/GitHub/itsmesamu/2dspiel/andere neue map.world"
+    ],
+    "map.height": 64,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 300,
+    "openFiles": [
+        "world_tileset.tsx"
+    ],
+    "project": "andere_map.tiled-project",
+    "recentFiles": [
+        "world_tileset.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
