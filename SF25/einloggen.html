@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>Willkommen im Backend</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Helvetica Neue";
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            margin-left: 30px;      
+            padding: 12px 16px;     
+            background: #f5f5f5;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            width: 240px;           
+        }
+        label {
+            font-weight: bold;
+            font-size: 17px;
+        }
+        input {
+            width: 160px;           
+            padding: 6px;
+            margin-top: 2px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 17px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 6px 14px;
+            background: cadetblue;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button:hover {
+            background:  white;
+        }
+        .pw-btn {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            background: none;
+            color: cadetblue;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+        }
+        .pw-btn:hover {
+            color: cadetblue;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Willkommen im Backend</h1>
+    <p>Hier kannst du dich mit Namen und Passwort einloggen:</p>
+    <form>
+        <div style="margin-bottom: 18px;">
+            <label for="username">Benutzername:</label><br>
+            <input type="text" id="username" name="username">
+        </div>
+        <div style="margin-bottom: 6px;">
+            <label for="password">Passwort:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <button type="button" class="pw-btn" onclick="window.location.href='passwort_vergessen.html'">Passwort vergessen?</button>
+        </div>
+        <button type="submit">Anmelden</button>
+    </form>
+</body>
