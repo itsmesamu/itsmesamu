@@ -1,4 +1,20 @@
+<?php
+$datenbank = new SQLite3('datenbank.db');
+
+$datenbank->exec("CREATE TABLE IF NOT EXISTS NUTZER (name , passwort)");
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST["username"];
+    $passwort = $_POST["password"];
+
+    $datenbank->exec("INSERT INTO NUTZER (name, passwort) VALUES ('$name', '$passwort')");
+    echo "Registrierung erfolgreich!";
+}
+
+$ergebnis = $datenbank->query("SELECT * FROM NUTZER");
+?>
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Willkommen im Backand</title>
@@ -43,11 +59,9 @@
     </style>
 </head>
 <body>
-    <h1>Hallo Backend</h1>
+    <h1>Willkommen im Backend</h1>
     <p> Hier kannst du dich mit Namen und Passwort anmelden:</p>
-    <form>
-        <label for="e-mail">E-Mail angeben:</label><br>
-        <input type="email" id="e.mail" name="email"><br><br>
+    <form method="post">
         <label for="username">Benutzernamen erstellen:</label><br>
         <input type="text" id="username" name="username"><br><br>
         <label for="password">Passwort erstellen:</label><br>
@@ -55,7 +69,12 @@
         <label for="password2">Passwort bestätigen:</label><br>
         <input type="password" id="password2" name="password2" oninput="checkPasswords()"><br><br>
         <button type="submit" id="submitBtn" disabled>Anmelden</button>
+        <div style="margin-top:30px; font-weight: bold;">
+            <p>Zurück zur Startseite:</p>
+            <button type="button" onclick="window.location.href='index.php'">Startseite</button>
+        </div>
     </form>
+    
     <script>
     function checkPasswords() {
         const pw1 = document.getElementById('password').value;
@@ -66,4 +85,15 @@
         document.getElementById('submitBtn').disabled = true;
     }
     </script>
+
+    <h2>Alle registrierten Nutzer:</h2>
+    <?php
+    while ($zeile = $ergebnis->fetchArray()):
+        echo htmlspecialchars($zeile["name"]);
+        echo " ";
+        echo htmlspecialchars($zeile["passwort"]);
+        echo "<br>";
+    endwhile;?>
+    
 </body>
+</html>

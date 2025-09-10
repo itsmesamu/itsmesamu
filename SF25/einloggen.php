@@ -1,4 +1,21 @@
+<?php
+$datenbank = new SQLite3('datenbank.db');
+
+$datenbank->exec("CREATE TABLE IF NOT EXISTS NUTZER (name , passwort)");
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST["username"];
+    $passwort = $_POST["password"];
+
+    $datenbank->exec("INSERT INTO NUTZER (name, passwort) VALUES ('$name', '$passwort')");
+
+    echo "Registrierung erfolgreich!";
+}
+
+$ergebnis = $datenbank->query("SELECT * FROM NUTZER");
+?>
 <!DOCTYPE html>
+<html>
 <head>
     <title>Willkommen im Backend</title>
     <style>
@@ -29,7 +46,6 @@
             font-size: 17px;
         }
         button {
-            margin-top: 10px;
             padding: 6px 14px;
             background: cadetblue;
             color: white;
@@ -39,7 +55,7 @@
             font-size: 15px;
         }
         button:hover {
-            background:  white;
+            background:  blue;
         }
         .pw-btn {
             margin-top: 6px;
@@ -58,21 +74,49 @@
         p {
             font-size: 20px;
         }
+
     </style>
 </head>
 <body>
     <h1>Willkommen im Backend</h1>
     <p>Hier kannst du dich mit Namen und Passwort einloggen:</p>
-    <form>
+    <form method="post">
         <div style="margin-bottom: 18px;">
             <label for="username">Benutzername:</label><br>
-            <input type="text" id="username" name="username">
+            <input type="text" id="username" name="username" oninput="checkFields()">
         </div>
         <div style="margin-bottom: 6px;">
             <label for="password">Passwort:</label><br>
-            <input type="password" id="password" name="password"><br>
-            <button type="button" class="pw-btn" onclick="window.location.href='passwort_vergessen.html'">Passwort vergessen?</button>
+            <input type="password" id="password" name="password" oninput="checkFields()"><br>
+            <button type="button" class="pw-btn" onclick="window.location.href='passwort_vergessen.php'">Passwort vergessen?</button>
         </div>
-        <button type="submit">Anmelden</button>
+        <button type="submit" id="submitBtn" class="submit-btn" disabled>Anmelden</button>
+        <div style= "margin-top: 30px; font-weight: bold;">
+            <p>Zurück zur Startseite:</p>
+            <button type="button" class="str-btn" onclick="window.location.href='index.php'">Startseite</button>
+        </div>
     </form>
+    <script>
+    function checkFields() {
+        const user = document.getElementById('username').value;
+        const pw = document.getElementById('password').value;
+        document.getElementById('submitBtn').disabled = !(user && pw);
+    }
+    window.onload = function() {
+        document.getElementById('submitBtn').disabled = true;
+    };
+    </script>
+
+    <h2>Alle registrierten Nutzer:</h2>
+    <?php
+    while ($zeile = $ergebnis->fetchArray()):
+        echo htmlspecialchars($zeile["name"]);
+        echo " ";
+        echo htmlspecialchars($zeile["passwort"]);
+        echo "<br>";
+    endwhile;?>
+
+        
 </body>
+
+</html>
