@@ -126,8 +126,8 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_y = self.höhe
             if symbol == arcade.key.R:
                 self.setup()
-            if symbol == arcade.key.DOWN:
-                self.spielfigur.change_x = 10
+            #if symbol == arcade.key.DOWN:
+             #   self.spielfigur.change_x = 10
             if symbol == arcade.key.C:
                  self.spielfigur.change_x = -10
             if symbol == arcade.key.T:

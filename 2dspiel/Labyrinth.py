@@ -130,6 +130,8 @@ class Labyrinth(arcade.Window):
                 self.SCHAF.change_x = -2
             if symbol == arcade.key.D:
                  self.SCHAF.change_x = 2
+            if symbol == arcade.key.G:
+                self.setup()
 
      def on_key_release(self, symbol, modifiers):
          if symbol == arcade.key.W:
