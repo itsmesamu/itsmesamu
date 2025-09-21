@@ -1,10 +1,10 @@
-import arcade.color
+import arcade
 import arcade.key
+import color
 import pyglet
 import math
 pyglet.options["osx_alt_loop"]  = True
 
-import arcade
 
 class Plattformer(arcade.Window):
     def __init__(self):
@@ -105,39 +105,39 @@ class Plattformer(arcade.Window):
 
         self.balls.append(bullet)
     
-    def on_key_press(self,symbol,modifiers):
-            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
-                    if arcade.key:
-                        self.spielfigur.change_y = self.höhe + 2.5
-            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
-                if arcade.key:
-                    self.spielfigur.change_y = 20
-            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump-")):
-                if arcade.key:
-                    self.spielfigur.center_x = 4506
-            if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump2")):
-                if arcade.key:
-                    self.spielfigur.change_y = 12
-            if symbol == arcade.key.RIGHT:
-                self.spielfigur.change_x = self.geschwindigkeit
-            if symbol == arcade.key.LEFT:
-                    self.spielfigur.change_x = self.geschwindigkeit2
-            if symbol == arcade.key.SPACE:
+    def on_key_press(self, symbol, modifiers):
+        if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("leiter layer")):
+            if symbol == arcade.key.UP:
+                self.spielfigur.change_y = self.höhe + 2.5
+        if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump")):
+            if symbol == arcade.key.UP:
+                self.spielfigur.change_y = 20
+        if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump-")):
+            if symbol == arcade.key.UP:
+                self.spielfigur.center_x = 4506
+        if arcade.check_for_collision_with_list(self.spielfigur, self.szene.get_sprite_list("jump2")):
+            if symbol == arcade.key.UP:
+                self.spielfigur.change_y = 12
+        if symbol == arcade.key.RIGHT:
+            self.spielfigur.change_x = self.geschwindigkeit
+        if symbol == arcade.key.LEFT:
+                self.spielfigur.change_x = self.geschwindigkeit2
+        if symbol == arcade.key.SPACE:
+            self.spielfigur.change_y = self.höhe
+        if symbol == arcade.key.R:
+            self.setup()
+        #if symbol == arcade.key.DOWN:
+         #   self.spielfigur.change_x = 10
+        if symbol == arcade.key.C:
+             self.spielfigur.change_x = -10
+        if symbol == arcade.key.T:
+             arcade.exit()
+        if symbol == arcade.key.D:
+            self.spielfigur.change_x = self.geschwindigkeit
+        if symbol == arcade.key.A:
+                self.spielfigur.change_x = self.geschwindigkeit2
+        if symbol == arcade.key.W:
                 self.spielfigur.change_y = self.höhe
-            if symbol == arcade.key.R:
-                self.setup()
-            #if symbol == arcade.key.DOWN:
-             #   self.spielfigur.change_x = 10
-            if symbol == arcade.key.C:
-                 self.spielfigur.change_x = -10
-            if symbol == arcade.key.T:
-                 arcade.exit()
-            if symbol == arcade.key.D:
-                self.spielfigur.change_x = self.geschwindigkeit
-            if symbol == arcade.key.A:
-                    self.spielfigur.change_x = self.geschwindigkeit2
-            if symbol == arcade.key.W:
-                    self.spielfigur.change_y = self.höhe
 
     
     def on_key_release(self,symbol,modifiers):
@@ -273,7 +273,7 @@ class Plattformer(arcade.Window):
                 self.spielfigur.change_x = 1                 
 
             distanz = math.hypot(self.spielfigur.center_x - self.monster.center_x, self.spielfigur.center_y - self.monster.center_y)
-            if distanz < 100:
+            if distanz < 222:
                     if self.monster_shoot_timer <= 0:
                         self.monster_shoot()
                         self.monster_shoot_timer = 3.5
@@ -282,12 +282,11 @@ class Plattformer(arcade.Window):
                 bullet.center_x += bullet.change_x
                 bullet.center_y += bullet.change_y
 
-            
             for bullet in self.balls:
                 if arcade.check_for_collision(bullet, self.spielfigur):
                     self.zeit = 0.001
                     bullet.kill()
 
-
-Plattformer()
-arcade.run()
+if __name__ == "__main__":
+    Plattformer()
+    arcade.run()

@@ -116,7 +116,36 @@ $ergebnis = $datenbank->query("SELECT * FROM NUTZER");
         echo "<br>";
     endwhile;?>
 
-        
+    <?php
+    $conn = new mysqli("localhost", "BENUTZER", "PASSWORT", "DATENBANK");
+    if ($conn->connect_error) {
+        die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $passwort = $_POST["passwort"];
+
+        $sql = "SELECT passwort FROM users WHERE name = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $stmt->bind_result($hash);
+        if ($stmt->fetch() && password_verify($passwort, $hash)) {
+            echo "Login erfolgreich!";
+        } else {
+            echo "Falscher Name oder Passwort!";
+        }
+        $stmt->close();
+        $conn->close();
+        exit;
+    }
+    ?>
+    <form method="post">
+        Name: <input type="text" name="name" required><br>
+        Passwort: <input type="password" name="passwort" required><br>
+        <button type="submit">Login</button>
+    </form>
 </body>
 
 </html>
