@@ -28,6 +28,6 @@ def generate_text(prompt, max_length=128, temperature=0.5):
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 # Beispielaufruf
-prompt = "Is there any shop in Karsfeld that is still open?"
+prompt = "Why is electricity lightning fast"
 generated_text = generate_text(prompt)
 print(generated_text)

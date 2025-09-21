@@ -11,9 +11,9 @@ class Labyrinth(arcade.Window):
         self.setup()
 
      def setup(self):
-        self.zeit = 200
+        self.zeit = 200879756543
         self.zahl = 0
-        self.patronen = 100
+        self.patronen = 1009765432456755555
         self.zähler = 0
 
 
