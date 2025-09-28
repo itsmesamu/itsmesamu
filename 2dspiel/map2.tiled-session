@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "/Users/samuelpaloczy/.Trash/map2.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Minden fájl (*)",
@@ -71,27 +71,17 @@
     "map.height": 30,
     "map.width": 30,
     "openFiles": [
-        "TX Shadow Plant.tsx",
-        "TX Plant.tsx",
-        "TX Player.tsx",
-        "TX Props.tsx",
-        "TX Shadow.tsx",
-        "TX Struct.tsx",
-        "TX Tileset Grass.tsx",
-        "TX Tileset Stone Ground.tsx",
-        "TX Tileset Wall.tsx",
-        "/Users/samuelpaloczy/.Trash/map2.tmx"
     ],
     "project": "map2.tiled-project",
     "recentFiles": [
-        "TX Struct.tsx",
-        "TX Plant.tsx",
         "TX Shadow Plant.tsx",
         "TX Player.tsx",
+        "TX Plant.tsx",
         "TX Props.tsx",
         "TX Shadow.tsx",
-        "TX Tileset Grass.tsx",
+        "TX Struct.tsx",
         "TX Tileset Stone Ground.tsx",
+        "TX Tileset Grass.tsx",
         "TX Tileset Wall.tsx",
         "/Users/samuelpaloczy/.Trash/map2.tmx",
         "draufsicht 2d spiel/map2.tmx"
