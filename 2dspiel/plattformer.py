@@ -1,6 +1,6 @@
 import arcade
 import arcade.key
-import color
+import arcade.color
 import pyglet
 import math
 pyglet.options["osx_alt_loop"]  = True
