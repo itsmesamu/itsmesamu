@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="66" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
- <tileset firstgid="1" source="../../../../../Beach_Tile.tsx"/>
- <tileset firstgid="16" source="../../../../../Grass_Middle.tsx"/>
- <tileset firstgid="17" source="../../../../../Cliff_Tile.tsx"/>
- <tileset firstgid="35" source="../../../../../Path_Tile.tsx"/>
- <tileset firstgid="53" source="../../../../../House.tsx"/>
- <tileset firstgid="88" source="../../../../../Outdoor_Decor_Free.tsx"/>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" source="Beach_Tile.tsx"/>
+ <tileset firstgid="16" source="Grass_Middle.tsx"/>
+ <tileset firstgid="17" source="Cliff_Tile.tsx"/>
+ <tileset firstgid="35" source="Path_Tile.tsx"/>
+ <tileset firstgid="53" source="House.tsx"/>
+ <tileset firstgid="88" source="Outdoor_Decor_Free.tsx"/>
  <layer id="1" name="1. csemperéteg" width="66" height="40">
   <data encoding="csv">
 1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,
