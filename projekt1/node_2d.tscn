@@ -1,0 +1,971 @@
+[gd_scene load_steps=96 format=4 uid="uid://crj5udo2b6rbm"]
+
+[ext_resource type="Texture2D" uid="uid://d0yp8gqfmlb6d" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://candnd5h8kuvb" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://b13lg5582v8vs" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="2_d2bti"]
+[ext_resource type="Texture2D" uid="uid://cnangrwub4aj7" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="2_kdubu"]
+[ext_resource type="Texture2D" uid="uid://c478ab4fl1eex" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="3_4qosj"]
+[ext_resource type="Texture2D" uid="uid://c73qhhm0lb657" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="3_d21ai"]
+[ext_resource type="Texture2D" uid="uid://6x2i7pj2fwud" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="3_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://b1rk67md4qonh" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://ppgxc4n03w4i" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="4_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://1522138dijd3" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="4_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://hxoh5w1o55xc" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="5_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://bxva3gmd4ofq1" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 02.png" id="5_flf07"]
+[ext_resource type="Texture2D" uid="uid://fb8cbdkh4ru4" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="5_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://dilcttvq76j6w" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="6_hqns4"]
+[ext_resource type="Texture2D" uid="uid://doi5vxp25qjxo" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="7_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://dwbgf2onthocx" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="7_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://dmlobq76dc2t0" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="7_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://csy3bse2nk1cq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="8_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://bq835o27c8ghf" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 02.png" id="8_ei405"]
+[ext_resource type="Texture2D" uid="uid://7teksgeb7g3w" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="9_bjha6"]
+[ext_resource type="Texture2D" uid="uid://c2x1yp26piaur" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 04.png" id="9_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://co6xk8unvr03g" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 02.png" id="9_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://toeg63e20bl3" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 01.png" id="10_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://celnvrwt3fmh1" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="10_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://del4pxluyw7br" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 03.png" id="10_d2bti"]
+[ext_resource type="Texture2D" uid="uid://byliy8ayohj14" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 04.png" id="11_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://cqsothh327pc5" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 03.png" id="12_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://c5rhiw7es1wf0" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 04.png" id="13_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://b6l3ouxbbpk8w" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 01.png" id="14_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://7yxj264tybb7" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png" id="16_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://bh8fo3cckt1po" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png" id="23_6ip5v"]
+[ext_resource type="Texture2D" uid="uid://dvghu0dl0lykq" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png" id="24_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://j8a0h3fwgsc4" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png" id="24_q5dlx"]
+[ext_resource type="Texture2D" uid="uid://6ucr34xibddr" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png" id="25_c4wnb"]
+[ext_resource type="Texture2D" uid="uid://mx1cdch5x1ci" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png" id="25_ornx7"]
+[ext_resource type="Texture2D" uid="uid://xr6xfc7e5odb" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png" id="26_7plk7"]
+[ext_resource type="Texture2D" uid="uid://4wjmaw46x2vy" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png" id="26_cnnru"]
+[ext_resource type="Texture2D" uid="uid://ctvfk41pj5c2l" path="res://Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png" id="27_540hr"]
+[ext_resource type="Script" uid="uid://dxru3ja2uukiv" path="res://character_body_2d.gd" id="27_q5dlx"]
+[ext_resource type="Texture2D" uid="uid://dki6gmmwxqypw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="28_qilgh"]
+[ext_resource type="Texture2D" uid="uid://b7kl5kokgf8n3" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" id="29_4qosj"]
+[ext_resource type="Texture2D" uid="uid://b3ok4uqqladx3" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" id="30_cjlbh"]
+[ext_resource type="Texture2D" uid="uid://cm6jari87xxqq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" id="31_kfelt"]
+[ext_resource type="Texture2D" uid="uid://ct8ns1qgcwkcq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" id="32_ytlpd"]
+[ext_resource type="Texture2D" uid="uid://2urycg2q07mk" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="33_2v765"]
+[ext_resource type="Texture2D" uid="uid://o3p5ifj64ul5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="34_b8fb0"]
+[ext_resource type="Script" uid="uid://bamdwbw5h87nk" path="res://area_2d.gd" id="39_c4wnb"]
+[ext_resource type="Texture2D" uid="uid://5ilr1rqh467d" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 01.png" id="40_ma08v"]
+[ext_resource type="Texture2D" uid="uid://bh6w81xy7k35k" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="41_s32dh"]
+[ext_resource type="Texture2D" uid="uid://b2foyaeaskbjo" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="42_037st"]
+[ext_resource type="Texture2D" uid="uid://cb3n463epaotf" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="51_cjlbh"]
+[ext_resource type="Texture2D" uid="uid://bdlr7ovvc0chu" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/01.png" id="52_b8fb0"]
+[ext_resource type="Script" uid="uid://cy0sklwb3i336" path="res://area_2d_3.gd" id="52_ma08v"]
+[ext_resource type="Texture2D" uid="uid://cow40b4lqm28p" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="53_ma08v"]
+[ext_resource type="Texture2D" uid="uid://b7mqq051f2syn" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="54_s32dh"]
+[ext_resource type="Texture2D" uid="uid://db4444856dpba" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="55_037st"]
+[ext_resource type="Texture2D" uid="uid://cx81j1xhiyn7a" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="56_6orn5"]
+[ext_resource type="Script" uid="uid://34etnse44gee" path="res://münze_6.gd" id="57_s32dh"]
+[ext_resource type="Texture2D" uid="uid://dogcbcta5vivp" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/02.png" id="58_22e24"]
+[ext_resource type="Texture2D" uid="uid://dsxdr601yvpu4" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/03.png" id="59_m7xe6"]
+[ext_resource type="Texture2D" uid="uid://bevqt3ubmd5en" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/04.png" id="60_wqmsq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjlbh"]
+texture = ExtResource("7_nr8wp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfelt"]
+texture = ExtResource("3_4qosj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ytlpd"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_cjlbh")
+sources/1 = SubResource("TileSetAtlasSource_kfelt")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gt76g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u7jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24dk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mryly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ebxd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2u7jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e8dv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kq1c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ornx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebxd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnnru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_540hr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ip5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5dlx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2bti"]
+texture = ExtResource("7_nr8wp")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ta5nu"]
+sources/0 = SubResource("TileSetAtlasSource_d2bti")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4wnb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_kq1c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ornx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cnnru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_540hr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbwgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_6ip5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_q5dlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_c4wnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7plk7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_qilgh")
+}],
+"loop": true,
+"name": &"fallen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_4qosj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_cjlbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kfelt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ytlpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_2v765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_b8fb0")
+}],
+"loop": true,
+"name": &"laufen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q6r6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kdubu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d21ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rj586")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4d7sh")
+}],
+"loop": true,
+"name": &"ruhe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_ma08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_s32dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_037st")
+}],
+"loop": false,
+"name": &"springen",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_22e24"]
+height = 28.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flf07"]
+texture = ExtResource("6_hqns4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:1/0 = 0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:3/0 = 0
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:3/0 = 0
+16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:4/0 = 0
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:4/0 = 0
+16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_k73cj"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_flf07")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjqkl"]
+texture = ExtResource("7_x0ka3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fs4d3"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_rjqkl")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vxoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0h7mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nr8wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d2bti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ta5nu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7plk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qosj"]
+size = Vector2(96, 32)
+
+[sub_resource type="Animation" id="Animation_kfelt"]
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(849, 49), Vector2(1103, -47)]
+}
+
+[sub_resource type="Animation" id="Animation_cjlbh"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(888, 24), Vector2(1082, -47)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytlpd"]
+_data = {
+&"RESET": SubResource("Animation_kfelt"),
+&"new_animation": SubResource("Animation_cjlbh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjlbh"]
+size = Vector2(31, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6orn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_ma08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_s32dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_037st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6orn5")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_b8fb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_22e24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_m7xe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_wqmsq")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s32dh"]
+radius = 5.0
+
+[sub_resource type="GDScript" id="GDScript_ma08v"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#$Control/Label.position = Vector2(10, 10)
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Hintergrundbild" type="Sprite2D" parent="."]
+position = Vector2(812.5, 2.25012)
+scale = Vector2(5.61198, 2.12891)
+texture = ExtResource("1_0h7mo")
+
+[node name="Hintergrundebene" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4//n/AAAAAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD5//n/AAAAAAAAAAD5//r/AAAAAAAAAAD5//v/AAAAAAAAAAD6//n/AAAAAAAAAAD6//r/AAAAAAAAAAD6//v/AAAAAAAAAAD7//n/AAAAAAAAAAD7//r/AAAAAAAAAAD7//v/AAAAAAAAAAD8//n/AAAAAAAAAAD8//r/AAAAAAAAAAD8//v/AAAAAAAAAAD9//n/AAAAAAAAAAD9//r/AAAAAAAAAAD9//v/AAAAAAAAAAD+//n/AAAAAAAAAAD+//r/AAAAAAAAAAD+//v/AAAAAAAAAAD///n/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPn/AAAAAAAAAAABAPr/AAAAAAAAAAABAPv/AAAAAAAAAAACAPn/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAADAPn/AAAAAAAAAAADAPr/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPn/AAAAAAAAAAAEAPr/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPn/AAAAAAAAAAAFAPr/AAAAAAAAAAAFAPv/AAAAAAAAAAAGAPn/AAAAAAAAAAAGAPr/AAAAAAAAAAAGAPv/AAAAAAAAAAAHAPn/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPn/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAPn/AAAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAAAAAAKAPn/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPv/AAAAAAAAAAALAPn/AAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAAMAPn/AAAAAAAAAAAMAPr/AAAAAAAAAAAMAPv/AAAAAAAAAAANAPn/AAAAAAAAAAANAPr/AAAAAAAAAAANAPv/AAAAAAAAAAAOAPn/AAAAAAAAAAAOAPr/AAAAAAAAAAAOAPv/AAAAAAAAAAAPAPn/AAAAAAAAAAAPAPr/AAAAAAAAAAAPAPv/AAAAAAAAAAAQAPn/AAAAAAAAAAAQAPr/AAAAAAAAAAAQAPv/AAAAAAAAAAARAPn/AAAAAAAAAAARAPr/AAAAAAAAAAARAPv/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAATAPn/AAAAAAAAAAATAPr/AAAAAAAAAAATAPv/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPr/AAAAAAAAAAAUAPv/AAAAAAAAAAAVAPn/AAAAAAAAAAAVAPr/AAAAAAAAAAAVAPv/AAAAAAAAAAAWAPn/AAAAAAAAAAAWAPr/AAAAAAAAAAAWAPv/AAAAAAAAAAAXAPn/AAAAAAAAAAAXAPr/AAAAAAAAAAAXAPv/AAAAAAAAAAAYAPn/AAAAAAAAAAAYAPr/AAAAAAAAAAAYAPv/AAAAAAAAAAAZAPn/AAAAAAAAAAAZAPr/AAAAAAAAAAAZAPv/AAAAAAAAAAAaAPn/AAAAAAAAAAAaAPr/AAAAAAAAAAAaAPv/AAAAAAAAAAAbAPn/AAAAAAAAAAAbAPr/AAAAAAAAAAAbAPv/AAAAAAAAAAAcAPn/AAAAAAAAAAAcAPr/AAAAAAAAAAAcAPv/AAAAAAAAAAAdAPn/AAAAAAAAAAAdAPr/AAAAAAAAAAAdAPv/AAAAAAAAAAAeAPn/AAAAAAAAAAAeAPr/AAAAAAAAAAAeAPv/AAAAAAAAAAAfAPn/AAAAAAAAAAAfAPr/AAAAAAAAAAAfAPv/AAAAAAAAAAAgAPn/AAAAAAAAAAAgAPr/AAAAAAAAAAAgAPv/AAAAAAAAAAAhAPn/AAAAAAAAAAAhAPr/AAAAAAAAAAAhAPv/AAAAAAAAAAAiAPn/AAAAAAAAAAAiAPr/AAAAAAAAAAAiAPv/AAAAAAAAAAAjAPn/AAAAAAAAAAAjAPr/AAAAAAAAAAAjAPv/AAAAAAAAAAAkAPn/AAAAAAAAAAAkAPr/AAAAAAAAAAAkAPv/AAAAAAAAAAAlAPn/AAAAAAAAAAAlAPr/AAAAAAAAAAAlAPv/AAAAAAAAAAAmAPn/AAAAAAAAAAAmAPr/AAAAAAAAAAAmAPv/AAAAAAAAAAAnAPn/AAAAAAAAAAAnAPr/AAAAAAAAAAAnAPv/AAAAAAAAAAAoAPn/AAAAAAAAAAAoAPr/AAAAAAAAAAAoAPv/AAAAAAAAAAApAPn/AAAAAAAAAAApAPr/AAAAAAAAAAApAPv/AAAAAAAAAAAqAPn/AAAAAAAAAAAqAPr/AAAAAAAAAAAqAPv/AAAAAAAAAAArAPn/AAAAAAAAAAArAPr/AAAAAAAAAAArAPv/AAAAAAAAAAAsAPn/AAAAAAAAAAAsAPr/AAAAAAAAAAAsAPv/AAAAAAAAAAAtAPn/AAAAAAAAAAAtAPr/AAAAAAAAAAAtAPv/AAAAAAAAAAAuAPn/AAAAAAAAAAAuAPr/AAAAAAAAAAAuAPv/AAAAAAAAAAAvAPn/AAAAAAAAAAAvAPr/AAAAAAAAAAAvAPv/AAAAAAAAAAAwAPn/AAAAAAAAAAAwAPr/AAAAAAAAAAAwAPv/AAAAAAAAAAAxAPn/AAAAAAAAAAAxAPr/AAAAAAAAAAAxAPv/AAAAAAAAAAAyAPn/AAAAAAAAAAAyAPr/AAAAAAAAAAAyAPv/AAAAAAAAAAAzAPn/AAAAAAAAAAAzAPr/AAAAAAAAAAAzAPv/AAAAAAAAAAA0APn/AAAAAAAAAAA0APr/AAAAAAAAAAA0APv/AAAAAAAAAAA1APn/AAAAAAAAAAA1APr/AAAAAAAAAAA1APv/AAAAAAAAAAA2APn/AAAAAAAAAAA2APr/AAAAAAAAAAA2APv/AAAAAAAAAAA3APn/AAAAAAAAAAA3APr/AAAAAAAAAAA3APv/AAAAAAAAAAA4APn/AAAAAAAAAAA4APr/AAAAAAAAAAA4APv/AAAAAAAAAAA5APn/AAAAAAAAAAA5APr/AAAAAAAAAAA5APv/AAAAAAAAAAA6APn/AAAAAAAAAAA6APr/AAAAAAAAAAA6APv/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ytlpd")
+
+[node name="Wolke1" type="Sprite2D" parent="."]
+position = Vector2(-31, -85)
+texture = ExtResource("2_d2bti")
+
+[node name="Wolke2" type="Sprite2D" parent="."]
+position = Vector2(192, -69)
+texture = ExtResource("3_ta5nu")
+
+[node name="Wolke3" type="Sprite2D" parent="."]
+position = Vector2(646, -92)
+texture = ExtResource("3_ta5nu")
+
+[node name="Wolke4" type="Sprite2D" parent="."]
+position = Vector2(444, -87)
+texture = ExtResource("4_rjqkl")
+
+[node name="Wolke5" type="Sprite2D" parent="."]
+position = Vector2(997, -128)
+texture = ExtResource("2_d2bti")
+
+[node name="Wolke6" type="Sprite2D" parent="."]
+position = Vector2(979, -111)
+texture = ExtResource("2_d2bti")
+
+[node name="Wolke7" type="Sprite2D" parent="."]
+position = Vector2(1666, -144)
+texture = ExtResource("5_fs4d3")
+
+[node name="Wolke8" type="Sprite2D" parent="."]
+position = Vector2(1221, -143)
+texture = ExtResource("5_fs4d3")
+
+[node name="Wasserspiegelung1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-112, 60)
+sprite_frames = SubResource("SpriteFrames_gt76g")
+autoplay = "default"
+frame_progress = 0.850777
+
+[node name="Wasserspiegelung2" type="AnimatedSprite2D" parent="."]
+position = Vector2(91, 56)
+sprite_frames = SubResource("SpriteFrames_2u7jv")
+autoplay = "default"
+frame_progress = 0.534828
+
+[node name="Wasserspiegelung3" type="AnimatedSprite2D" parent="."]
+position = Vector2(191, 55)
+sprite_frames = SubResource("SpriteFrames_24dk6")
+autoplay = "default"
+frame_progress = 0.800964
+
+[node name="Wasserspiegelung4" type="AnimatedSprite2D" parent="."]
+position = Vector2(285, 55)
+sprite_frames = SubResource("SpriteFrames_mryly")
+autoplay = "default"
+
+[node name="Wasserspiegelung5" type="AnimatedSprite2D" parent="."]
+position = Vector2(442, 55)
+sprite_frames = SubResource("SpriteFrames_kq1c5")
+autoplay = "default"
+
+[node name="Wasserspiegelung6" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 55)
+sprite_frames = SubResource("SpriteFrames_ornx7")
+autoplay = "default"
+frame_progress = 0.605996
+
+[node name="Wasserspiegelung7" type="AnimatedSprite2D" parent="."]
+position = Vector2(666, 55)
+sprite_frames = SubResource("SpriteFrames_ebxd8")
+autoplay = "default"
+frame_progress = 0.161689
+
+[node name="Wasserspiegelung8" type="AnimatedSprite2D" parent="."]
+position = Vector2(877, 57)
+sprite_frames = SubResource("SpriteFrames_cnnru")
+autoplay = "default"
+frame_progress = 0.135809
+
+[node name="Wasserspiegelung9" type="AnimatedSprite2D" parent="."]
+position = Vector2(1086, 60)
+sprite_frames = SubResource("SpriteFrames_540hr")
+autoplay = "default"
+frame_progress = 0.258617
+
+[node name="Wasserspiegelung10" type="AnimatedSprite2D" parent="."]
+position = Vector2(1399, 60)
+sprite_frames = SubResource("SpriteFrames_6ip5v")
+autoplay = "default"
+frame_progress = 0.677648
+
+[node name="Wasserspiegelung11" type="AnimatedSprite2D" parent="."]
+position = Vector2(1674, 59)
+sprite_frames = SubResource("SpriteFrames_q5dlx")
+autoplay = "default"
+frame_progress = 0.937964
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_ta5nu")
+
+[node name="Hintergrundpalme1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-41, 16)
+sprite_frames = SubResource("SpriteFrames_c4wnb")
+autoplay = "default"
+frame_progress = 0.710495
+
+[node name="Hintergrundpalme2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 1)
+sprite_frames = SubResource("SpriteFrames_fbwgr")
+autoplay = "default"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, 21)
+collision_layer = 3
+script = ExtResource("27_q5dlx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_ir8iy")
+animation = &"ruhe"
+autoplay = "ruhe"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3, 3)
+limit_top = -180
+limit_bottom = 138
+limit_smoothed = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_22e24")
+
+[node name="Blocklayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 1)
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAD//wIAAAAAAAEAAAD//wMAAAAAAAIAAAAAAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAABAAEAAAACAAAAAAABAAIAAAACAAEAAAABAAMAAAACAAIAAAAEAAEAAAAEAAAAAAAEAAIAAAAEAAEAAAAEAAMAAAAEAAIAAAAHAAEAAAAEAAAAAAAHAAIAAAAEAAEAAAAHAAMAAAAEAAIAAAAKAAEAAAAAAAQAAAALAAEAAAABAAQAAAAMAAEAAAACAAQAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAIAAAAQAAEAAAACAAAAAAAQAAIAAAACAAIAAAATAAEAAAAEAAAAAAATAAIAAAAEAAEAAAATAAMAAAAEAAIAAAAWAAEAAAAAAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAAAAAIAAAAXAAEAAAABAAAAAAAXAAIAAAABAAEAAAAXAAMAAAABAAIAAAAYAAEAAAACAAAAAAAYAAIAAAACAAEAAAAYAAMAAAACAAIAAAAkAP7/AAAAAAQAAAAlAP7/AAABAAQAAAAmAP7/AAACAAQAAAApAP7/AAAAAAQAAAAqAP7/AAABAAQAAAArAP7/AAACAAQAAAAuAP7/AAAAAAAAAAAuAP//AAAAAAIAAAAvAP7/AAACAAAAAAAvAP//AAACAAIAAAAyAP7/AAAEAAQAAAA=")
+tile_set = SubResource("TileSet_k73cj")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAEAAAABAAAAAAAAAAAAAAAKAAEAAAABAAAAAAALAAEAAAACAAAAAAAKAAAAAAAAAAAAAAAWAAEAAAABAAEAAAAXAAEAAAACAAEAAAAXAAAAAAAAAAAAAAAvAP7/AAAAAAEAAAAvAP3/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fs4d3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(47, -16)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(335, -16)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(751, -16)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1519, -112)
+sprite_frames = SubResource("SpriteFrames_7vxoj")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(88, 138)
+script = ExtResource("39_c4wnb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_7plk7")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(849, 49)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("6_hqns4")
+region_enabled = true
+region_rect = Rect2(0, 128, 96, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_4qosj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_ytlpd")
+}
+autoplay = "RESET"
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(370, 17)
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("51_cjlbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-0.5, 9.5)
+shape = SubResource("RectangleShape2D_cjlbh")
+
+[node name="Münze1" type="Area2D" parent="."]
+position = Vector2(143, 17)
+script = ExtResource("52_ma08v")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze1"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze1"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="Münze2" type="Area2D" parent="."]
+position = Vector2(239, 17)
+script = ExtResource("52_ma08v")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze2"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze2"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="Münze3" type="Area2D" parent="."]
+position = Vector2(511, 17)
+script = ExtResource("52_ma08v")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze3"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+frame_progress = 0.583541
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze3"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="Münze4" type="Area2D" parent="."]
+position = Vector2(623, 17)
+script = ExtResource("52_ma08v")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze4"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze4"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="Münze5" type="Area2D" parent="."]
+position = Vector2(1197, -80)
+script = ExtResource("52_ma08v")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze5"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze5"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="Münze6" type="Area2D" parent="."]
+position = Vector2(943, -85)
+script = ExtResource("57_s32dh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Münze6"]
+sprite_frames = SubResource("SpriteFrames_6orn5")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.430712
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Münze6"]
+shape = SubResource("CircleShape2D_s32dh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(20, 20)
+transform = Transform2D(1, 0, 0, 1, 20, 20)
+script = SubResource("GDScript_ma08v")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Münze1" to="Münze1" method="_on_body_entered"]
+[connection signal="body_entered" from="Münze2" to="Münze2" method="_on_body_entered"]
+[connection signal="body_entered" from="Münze3" to="Münze3" method="_on_body_entered"]
+[connection signal="body_entered" from="Münze4" to="Münze4" method="_on_body_entered"]
+[connection signal="body_entered" from="Münze5" to="Münze5" method="_on_body_entered"]
+[connection signal="body_entered" from="Münze6" to="Münze6" method="_on_body_entered"]
