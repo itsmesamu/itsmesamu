@@ -5,8 +5,10 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
 @onready var player_sprite = $AnimatedSprite2D
-
+@onready var punkte_label = $"../CanvasLayer/Control/Label"
+@onready var leben_label = $"../CanvasLayer/Control2/Label"
 var punkte = 0
+var leben = 3
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,13 +41,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	$"../CanvasLayer/Control/Label".text = str(punkte)
-
-
+	punkte_label.text = str(punkte)
+	leben_label.text = str(leben)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
