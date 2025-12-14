@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -300.0
 @onready var leben_label = $"../CanvasLayer/Control2/Label"
 var punkte = 0
 var leben = 3
+var getroffen_animation = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,7 +32,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		
+
+		
+	if getroffen_animation:
+		player_sprite.play("getroffen")
 	if velocity.x == 0 and velocity.y == 0:
 		player_sprite.play("ruhe")
 	elif velocity.x != 0 and velocity.y == 0:
@@ -46,3 +51,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
+
+func _on_timer_timeout() -> void:
+	pass
