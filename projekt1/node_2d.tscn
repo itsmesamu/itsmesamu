@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://crj5udo2b6rbm"]
+[gd_scene load_steps=105 format=4 uid="uid://crj5udo2b6rbm"]
 
 [ext_resource type="Texture2D" uid="uid://d0yp8gqfmlb6d" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://candnd5h8kuvb" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_q6r6c"]
@@ -66,6 +66,10 @@
 [ext_resource type="Texture2D" uid="uid://dogcbcta5vivp" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/02.png" id="58_22e24"]
 [ext_resource type="Texture2D" uid="uid://dsxdr601yvpu4" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/03.png" id="59_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://bevqt3ubmd5en" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/04.png" id="60_wqmsq"]
+[ext_resource type="Texture2D" uid="uid://vh1ps521rip" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="67_t3mf0"]
+[ext_resource type="Texture2D" uid="uid://dg8btn8kew6ug" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="68_6uidu"]
+[ext_resource type="Texture2D" uid="uid://cg1nn44bk0wit" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="69_qu7as"]
+[ext_resource type="Texture2D" uid="uid://24qgrft38g8k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="70_lyuya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjlbh"]
 texture = ExtResource("7_nr8wp")
@@ -1063,6 +1067,25 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Lebensbalken" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Lebensbalken"]
+position = Vector2(-18, -56)
+texture = ExtResource("67_t3mf0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lebensbalken"]
+position = Vector2(13, -56)
+texture = ExtResource("68_6uidu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Lebensbalken"]
+position = Vector2(44, -56)
+texture = ExtResource("69_qu7as")
+
+[node name="Leben" type="Sprite2D" parent="Lebensbalken"]
+position = Vector2(20, -57)
+scale = Vector2(2.28125, 1)
+texture = ExtResource("70_lyuya")
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Stachel1" to="Stachel1" method="_on_body_entered"]

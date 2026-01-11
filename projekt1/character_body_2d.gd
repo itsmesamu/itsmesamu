@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -300.0
 @onready var player_sprite = $AnimatedSprite2D
 @onready var punkte_label = $"../CanvasLayer/Control/Label"
 @onready var leben_label = $"../CanvasLayer/Control2/Label"
+@onready var leben_sprite = $"../Lebensbalken/Leben"
 var punkte = 0
 var leben = 3
 var zwischenanimation = false
@@ -43,14 +44,16 @@ func _physics_process(delta: float) -> void:
 		player_sprite.play("laufen")
 	elif velocity.y < 0:
 		player_sprite.play("springen")
+	else:
+		player_sprite.play("fallen")
 	
 	move_and_slide()
 	
 	punkte_label.text = str(punkte)
 	leben_label.text = str(leben)
+	
+	leben_sprite.scale.x = 2.4
+	leben_sprite.offset
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
-
-func _on_timer_timeout() -> void:
-	pass
+	get_tree().reload_current_scene.call_deferred()
