@@ -13,7 +13,7 @@ func get_animation_duration(animated_sprite: AnimatedSprite2D, animation_name: S
 	
 	var animation_duration = frame_count/animation_speed
 	return animation_duration
-
+	
 
 func _on_body_entered(body: Node2D) -> void:
 	my_body_entered = body

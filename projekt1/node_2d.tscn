@@ -374,10 +374,10 @@ animations = [{
 "texture": ExtResource("30_akb8o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_t3mf0")
+"texture": ExtResource("32_kejda")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_kejda")
+"texture": ExtResource("31_t3mf0")
 }],
 "loop": true,
 "name": &"getroffen",
@@ -838,7 +838,7 @@ script = ExtResource("27_q5dlx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_ir8iy")
-animation = &"getroffen"
+animation = &"ruhe"
 autoplay = "ruhe"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

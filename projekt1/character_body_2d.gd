@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 450.0
+const JUMP_VELOCITY = -600.0
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var punkte_label = $"../CanvasLayer/Control/Label"
@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	leben_label.text = str(leben)
 	
 	leben_sprite.scale.x = 2.4
-	leben_sprite.offset
+	leben_sprite.offset 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene.call_deferred()
