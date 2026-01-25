@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	
 	if zwischenanimation:
 		pass
-	if velocity.x == 0 and velocity.y == 0:
+	elif velocity.x == 0 and velocity.y == 0:
 		player_sprite.play("ruhe")
 	elif velocity.x != 0 and velocity.y == 0:
 		player_sprite.play("laufen")
