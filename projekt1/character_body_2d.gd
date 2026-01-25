@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 450.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 160.0
+const JUMP_VELOCITY = -350.0
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var punkte_label = $"../CanvasLayer/Control/Label"
@@ -11,6 +11,10 @@ const JUMP_VELOCITY = -600.0
 var punkte = 0
 var leben = 3
 var zwischenanimation = false
+
+func _ready() -> void:
+	leben_sprite.scale.x = 2.4
+	leben_sprite.offset.x = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,16 +30,17 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction:
-		if direction > 0:
-			player_sprite.scale.x = abs(player_sprite.scale.x)
-		elif direction < 0:
-			player_sprite.scale.x = -abs(player_sprite.scale.x)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 
-		
+func _process(delta: float) -> void:
+	if velocity.x > 0:
+		player_sprite.scale.x = abs(player_sprite.scale.x)
+	elif velocity.x < 0:
+		player_sprite.scale.x = -abs(player_sprite.scale.x)
+	
 	if zwischenanimation:
 		pass
 	if velocity.x == 0 and velocity.y == 0:
@@ -49,11 +54,6 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	punkte_label.text = str(punkte)
-	leben_label.text = str(leben)
-	
-	leben_sprite.scale.x = 2.4
-	leben_sprite.offset 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene.call_deferred()
