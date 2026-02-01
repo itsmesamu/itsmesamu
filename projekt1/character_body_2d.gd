@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 160.0
-const JUMP_VELOCITY = -350.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -600.0
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var punkte_label = $"../CanvasLayer/Control/Label"
-@onready var leben_label = $"../CanvasLayer/Control2/Label"
+#@onready var leben_label = $"../CanvasLayer/Control2/Label"
 @onready var leben_sprite = $"../Lebensbalken/Leben"
+@onready var leben_sprite_scalex = $"../Lebensbalken/Leben".scale.x
+@onready var leben_sprite_länge = $"../Lebensbalken/Leben".texture.get_size()
 var punkte = 0
 var leben = 3
 var zwischenanimation = false

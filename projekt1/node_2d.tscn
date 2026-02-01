@@ -442,7 +442,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_22e24"]
-height = 28.0
+radius = 12.0
+height = 176.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flf07"]
 texture = ExtResource("6_hqns4")
@@ -1083,8 +1084,8 @@ position = Vector2(44, -56)
 texture = ExtResource("69_qu7as")
 
 [node name="Leben" type="Sprite2D" parent="Lebensbalken"]
-position = Vector2(20, -57)
-scale = Vector2(2.28125, 1)
+position = Vector2(19.75, -57)
+scale = Vector2(2.29688, 1)
 texture = ExtResource("70_lyuya")
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
