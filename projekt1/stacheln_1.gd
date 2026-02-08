@@ -1,6 +1,5 @@
 extends Area2D
 
-
 @onready var timer = $Timer
 var my_body_entered = null
 var my_body_entered_animated_sprite = null
@@ -12,11 +11,10 @@ func get_animation_duration(animated_sprite: AnimatedSprite2D, animation_name: S
 	
 	var animation_duration = frame_count / animation_speed
 	return animation_duration
-	
-	
+
 func _on_body_entered(body: Node2D) -> void:
 	my_body_entered = body
-	my_body_entered_animated_sprite = my_body_entered.get_node("AnimationSprite2D")
+	my_body_entered_animated_sprite = my_body_entered.get_node("AnimatedSprite2D")
 	
 	my_body_entered.zwischenanimation = true
 	
@@ -30,6 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	timer.stop()
 	my_body_entered.zwischenanimation = false
+	
 func _on_timer_timeout() -> void:
 	my_body_entered_animated_sprite.play("getroffen")
 	my_body_entered.leben -= 1

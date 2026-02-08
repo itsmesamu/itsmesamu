@@ -55,7 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://bh6w81xy7k35k" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="41_s32dh"]
 [ext_resource type="Texture2D" uid="uid://b2foyaeaskbjo" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="42_037st"]
 [ext_resource type="Texture2D" uid="uid://cb3n463epaotf" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="51_cjlbh"]
-[ext_resource type="Script" uid="uid://55pebrg5xdxt" path="res://stachel_1.gd" id="51_m7xe6"]
+[ext_resource type="Script" uid="uid://dvhyc12iiu6yi" path="res://stacheln_1.gd" id="51_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://bdlr7ovvc0chu" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/01.png" id="52_b8fb0"]
 [ext_resource type="Script" uid="uid://cy0sklwb3i336" path="res://area_2d_3.gd" id="52_ma08v"]
 [ext_resource type="Texture2D" uid="uid://cow40b4lqm28p" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="53_ma08v"]
@@ -442,8 +442,6 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_22e24"]
-radius = 12.0
-height = 176.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flf07"]
 texture = ExtResource("6_hqns4")

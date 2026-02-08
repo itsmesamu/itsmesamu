@@ -1,17 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 150
+const JUMP_VELOCITY = -300
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var punkte_label = $"../CanvasLayer/Control/Label"
-#@onready var leben_label = $"../CanvasLayer/Control2/Label"
 @onready var leben_sprite = $"../Lebensbalken/Leben"
 @onready var leben_sprite_scalex = $"../Lebensbalken/Leben".scale.x
-@onready var leben_sprite_länge = $"../Lebensbalken/Leben".texture.get_size()
+@onready var leben_sprite_länge = $"../Lebensbalken/Leben".texture.get_size().x
+@onready var leben_sprite_offsetx = $"../Lebensbalken/Leben".offset.x
 var punkte = 0
 var leben = 3
+var max_leben = 3
 var zwischenanimation = false
 
 func _ready() -> void:
@@ -36,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	move_and_slide()
 
 func _process(delta: float) -> void:
 	if velocity.x > 0:
@@ -54,8 +56,13 @@ func _process(delta: float) -> void:
 	else:
 		player_sprite.play("fallen")
 	
-	move_and_slide()
+	punkte_label.text = str(punkte)
+	var anteil = float(leben) / max_leben
+	leben_sprite.scale.x = (leben / max_leben) * leben_sprite_scalex
+	leben_sprite.offset.x = -0.5 * (1 - leben / max_leben) * leben_sprite_länge * leben_sprite_scalex
 	
+	if leben <= 0:
+		get_tree().reload_current_scene.call_deferred()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene.call_deferred()
