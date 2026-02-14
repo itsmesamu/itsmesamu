@@ -1,0 +1,65 @@
+0000000000000000000000000000000000000000 1635657987f6bcf5ecd63ad2f9fb1f16be324c3e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1731743477 +0100	clone: from https://github.com/itsmesamu/itsmesamu.git
+1635657987f6bcf5ecd63ad2f9fb1f16be324c3e 1635657987f6bcf5ecd63ad2f9fb1f16be324c3e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1731861502 +0100	reset: moving to HEAD
+1635657987f6bcf5ecd63ad2f9fb1f16be324c3e 7332edf09626e6b756837e03e657ee273e3f819d itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1731861505 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+7332edf09626e6b756837e03e657ee273e3f819d ef2da833b76b5346d9f17d0c947e80b928f3b357 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1732562098 +0100	commit: 123
+ef2da833b76b5346d9f17d0c947e80b928f3b357 38e67caf87aa3c76abb2e479899f31b1699adae2 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1732562101 +0100	pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+38e67caf87aa3c76abb2e479899f31b1699adae2 8a257f789c16e1ad54c1034c3d11c78f1bf63e72 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1735330613 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+8a257f789c16e1ad54c1034c3d11c78f1bf63e72 15143a916ec382c4e942d519d337bd7d59684cde itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1735330623 +0100	commit: 123
+15143a916ec382c4e942d519d337bd7d59684cde 5e26890737841b65a84788042d8ce9ac0ed775b6 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1737916340 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+5e26890737841b65a84788042d8ce9ac0ed775b6 51a705ec663d12cedd5f1a9c3eab7b94b81a1fbc itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1738612989 +0100	commit: 123
+51a705ec663d12cedd5f1a9c3eab7b94b81a1fbc 51a705ec663d12cedd5f1a9c3eab7b94b81a1fbc itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1738613002 +0100	reset: moving to HEAD
+51a705ec663d12cedd5f1a9c3eab7b94b81a1fbc b84546639c5d7b0f63bcdf4cd15e3e9c52280e18 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1738613043 +0100	commit (merge): Merge branch 'main' of https://github.com/itsmesamu/itsmesamu
+b84546639c5d7b0f63bcdf4cd15e3e9c52280e18 01500cd5a1b029c825803608afd8c02a62d76999 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1738613651 +0100	commit (amend): Merge branch 'main' of https://github.com/itsmesamu/itsmesamu
+01500cd5a1b029c825803608afd8c02a62d76999 a290c01d0555ec5366df9cb97746f7b46f465cd9 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739024678 +0100	commit: 1234
+a290c01d0555ec5366df9cb97746f7b46f465cd9 1ca5c7f541a69e15943a815bad870f2c499ba2b9 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739026082 +0100	commit: 12345
+1ca5c7f541a69e15943a815bad870f2c499ba2b9 9fe6f6a8a0c782d837e73b75e59a1bd784d35e63 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739030555 +0100	commit: 12345
+9fe6f6a8a0c782d837e73b75e59a1bd784d35e63 7beeb70f5ef8ca3715a49af24b37cc75b16c4994 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739056028 +0100	commit: commit
+7beeb70f5ef8ca3715a49af24b37cc75b16c4994 f2ade5d2b4242d0b9f19c5d1732416aa4cd9d1d0 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739114903 +0100	commit: bombo
+f2ade5d2b4242d0b9f19c5d1732416aa4cd9d1d0 06e1faf08e98d5cf21ba576296fcf6162a11a8d6 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739136486 +0100	commit: eif so
+06e1faf08e98d5cf21ba576296fcf6162a11a8d6 c2eca7e82be3eefa5b3f15020a146095c9ebc48f itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739705326 +0100	commit: bombo
+c2eca7e82be3eefa5b3f15020a146095c9ebc48f d5949b78119b089f8878e2f69c2ea392b09e113c itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739717478 +0100	commit: 123
+d5949b78119b089f8878e2f69c2ea392b09e113c d240e9f6da276607f2f6f7857f4ab80045d626df itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739717578 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+d240e9f6da276607f2f6f7857f4ab80045d626df f1b8c2627f7990afa4102bbe805a17fbf97848ec itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739717955 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+f1b8c2627f7990afa4102bbe805a17fbf97848ec 10fc747420b68a7954fcc8f7377e54306782b38b itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739720660 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+10fc747420b68a7954fcc8f7377e54306782b38b 44959e8f62078f5880cd23fd6259ea7e7e271ee2 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739720763 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+44959e8f62078f5880cd23fd6259ea7e7e271ee2 8e8dff3b3f0cc3dbf3a87fbb2d2da68f501040de itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739720776 +0100	commit: ka
+8e8dff3b3f0cc3dbf3a87fbb2d2da68f501040de 765eef5b8dfe65d7f3fd64fc4ea6bc1b3a48d7b2 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739720838 +0100	pull --ff --recurse-submodules --progress origin: Fast-forward
+765eef5b8dfe65d7f3fd64fc4ea6bc1b3a48d7b2 b67c71bbb2def19f0a8edd7f192d4bb637fc7758 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1739721697 +0100	commit: ka eif so
+b67c71bbb2def19f0a8edd7f192d4bb637fc7758 c3637d479ec09e088429043f4f23ea26052a4091 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1740321672 +0100	commit: 123
+c3637d479ec09e088429043f4f23ea26052a4091 a5ddc5d2e808faff5458d3cb203ac64bbc42acd9 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1740326420 +0100	commit: 123
+a5ddc5d2e808faff5458d3cb203ac64bbc42acd9 8229d88d2247737652bf89e049097707bf403dcf itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1740823424 +0100	commit: fast fertig
+8229d88d2247737652bf89e049097707bf403dcf aa57e7624fa9a6da9e11132dc24894499a8c1792 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1742738269 +0100	commit: 123
+aa57e7624fa9a6da9e11132dc24894499a8c1792 a972989e1ab02d894a857eff9c28bf3095cfed8c itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1743343394 +0200	commit: 1234
+a972989e1ab02d894a857eff9c28bf3095cfed8c a972989e1ab02d894a857eff9c28bf3095cfed8c itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1743343420 +0200	reset: moving to HEAD
+a972989e1ab02d894a857eff9c28bf3095cfed8c 4c8e1533d539b68dea4ec691153f8ae24cb5c116 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1743343664 +0200	commit (merge): 124
+4c8e1533d539b68dea4ec691153f8ae24cb5c116 e40364519f43958fdd7de36207dfcf3b4e5d263d itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1743343902 +0200	commit: 124
+e40364519f43958fdd7de36207dfcf3b4e5d263d 641092d742de7b309135d6d80e5444b124ed12c3 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1743346954 +0200	commit: spiel fast fertig
+641092d742de7b309135d6d80e5444b124ed12c3 07a053f77863123b853e371a7193419fcbb11800 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744551634 +0200	pull --ff --recurse-submodules --progress origin: Fast-forward
+07a053f77863123b853e371a7193419fcbb11800 ce09b9edef812c80708cf2bcc0f71ce3c61d64b1 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744551645 +0200	commit: übungen neu
+ce09b9edef812c80708cf2bcc0f71ce3c61d64b1 9e9954e0af2df26287aaed93c4c499481567e731 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744556709 +0200	commit: fertig + korrektur
+9e9954e0af2df26287aaed93c4c499481567e731 5df2cc4b25f4fce83bfd0ce0cb86beccdc497ceb itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744612983 +0200	pull --ff --recurse-submodules --progress origin: Fast-forward
+5df2cc4b25f4fce83bfd0ce0cb86beccdc497ceb 4b6d390fe9e33d882abeb529f22050b32bdcf8d5 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744613725 +0200	commit: änderung eis
+4b6d390fe9e33d882abeb529f22050b32bdcf8d5 809179bd10f1181df8023e9a1c036725e53a3862 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1744623135 +0200	commit: scheduling
+809179bd10f1181df8023e9a1c036725e53a3862 c52b27e21f56f7df036042f1b48e0a1bd9225705 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1745390385 +0200	commit: 123
+c52b27e21f56f7df036042f1b48e0a1bd9225705 0a4318c48f120ecf122378e0f8be9b1fdc3491ce itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1745401112 +0200	commit: webkommunikation
+0a4318c48f120ecf122378e0f8be9b1fdc3491ce 0f6121148b58c4b0e778b5e6750bc4a014736d80 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1746971051 +0200	pull --ff --recurse-submodules --progress origin: Fast-forward
+0f6121148b58c4b0e778b5e6750bc4a014736d80 ee695c4bf35b8d6f8021110e7603e197ae37fb94 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1746971060 +0200	commit: 123
+ee695c4bf35b8d6f8021110e7603e197ae37fb94 82795de9c424596c882f64452c70a509f1cccfd8 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1746975667 +0200	commit: spiel fertig
+82795de9c424596c882f64452c70a509f1cccfd8 f1af200d77ec7b64266cca420b5830a2c4244c8e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1751008490 +0200	commit: 123
+f1af200d77ec7b64266cca420b5830a2c4244c8e 1f8dc936156714d5f56dafbed3d082624375b340 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1751008511 +0200	pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+1f8dc936156714d5f56dafbed3d082624375b340 7732c79db1bad1c43ec4d9eac063f0c88980f3af itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1751809294 +0200	pull --ff --recurse-submodules --progress origin: Fast-forward
+7732c79db1bad1c43ec4d9eac063f0c88980f3af bfbf184e710bb020fb8e08ec06dfd92b2867fc0b itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1752414242 +0200	commit: sd
+bfbf184e710bb020fb8e08ec06dfd92b2867fc0b ce8648045c455bbf64414c4cb0bede6a23b51646 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1752418521 +0200	commit: geht nd
+ce8648045c455bbf64414c4cb0bede6a23b51646 87a9fe0bb5b6a7cb6be09c28843424b86cc0b691 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1753018862 +0200	commit: 123
+87a9fe0bb5b6a7cb6be09c28843424b86cc0b691 0e537850fa71b623da38428b03f491f66d1930ad itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1753023094 +0200	commit: 2 monster hinzugefügt
+0e537850fa71b623da38428b03f491f66d1930ad bad0a62df3ba3c60acc16012f5bb90e887d25c49 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1757652238 +0200	commit: hsfh
+bad0a62df3ba3c60acc16012f5bb90e887d25c49 641786845de0367b842f1a83186e91d090b44a95 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1757652262 +0200	checkout: moving from main to dfv
+641786845de0367b842f1a83186e91d090b44a95 bad0a62df3ba3c60acc16012f5bb90e887d25c49 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1757652346 +0200	checkout: moving from dfv to main
+bad0a62df3ba3c60acc16012f5bb90e887d25c49 6ca34c759a2de340fe1a7f7159f71c61096da082 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1757652606 +0200	commit: 123
+6ca34c759a2de340fe1a7f7159f71c61096da082 804e152b46c59b94e523559495e6ac192a3c621e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1759080494 +0200	pull --ff --recurse-submodules --progress origin: Fast-forward
+804e152b46c59b94e523559495e6ac192a3c621e a2bb7dac16e80cdee72a3977366efa2b6e08c10e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1759681607 +0200	commit: sigma
+a2bb7dac16e80cdee72a3977366efa2b6e08c10e a2bb7dac16e80cdee72a3977366efa2b6e08c10e itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1759681624 +0200	reset: moving to HEAD
+a2bb7dac16e80cdee72a3977366efa2b6e08c10e 40509510afe622bfab50148c60575d6ff98cace8 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1759685115 +0200	commit (merge): 123
+40509510afe622bfab50148c60575d6ff98cace8 35962f025b9509115a1e717e998c176348b16162 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1768744126 +0100	commit: 12
+35962f025b9509115a1e717e998c176348b16162 40509510afe622bfab50148c60575d6ff98cace8 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1771083450 +0100	reset: moving to 40509510afe622bfab50148c60575d6ff98cace8
+40509510afe622bfab50148c60575d6ff98cace8 9f6924178d3c9ad4b339e8f5d645727c22828ae8 itsmesamu <143997065+itsmesamu@users.noreply.github.com> 1771083683 +0100	commit: 12
